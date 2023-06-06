@@ -2,8 +2,25 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:ExploreRussia"
-             StartupUri="MainWindow.xaml">
+             xmlns:viewModel="clr-namespace:ExploreRussia.MVVM.ViewModel"
+             xmlns:view="clr-namespace:ExploreRussia.MVVM.View"
+             StartupUri="UI/Wins/MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/UI/res/Theme/Colors.xaml"/>
+                <ResourceDictionary Source="/UI/res/Theme/MenuButtonTheme.xaml"/>
+                <ResourceDictionary Source="/UI/res/Theme/TextBoxTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            
+            <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
+                <view:HomeView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:DiscoveryViewModel}">
+                <view:DiscoveryView/>
+            </DataTemplate>
+
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
