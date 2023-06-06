@@ -1,9 +1,7 @@
 ﻿using ExploreRussia.Core;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using ExploreRussia.MVVM.Model;
+using ExploreRussia.MVVM.Repositories;
+using System.Threading;
 
 namespace ExploreRussia.MVVM.ViewModel
 {
@@ -17,13 +15,30 @@ namespace ExploreRussia.MVVM.ViewModel
         public HomeViewModel HomeVM { get; set; }
         public DiscoveryViewModel DiscoveryVM { get; set; }
 
+        //поля
+        private UserAccountModel _currentUserAccount;
+        private IUserRepository userRepository;
+
+        public UserAccountModel CurrentUserAccount
+        {
+            get
+            {
+                return _currentUserAccount;
+            }
+
+            set
+            {
+                _currentUserAccount = value;
+                OnPropertyChanged(nameof(CurrentUserAccount));
+            }
+        }
         private object _currentView;
 
         public object CurrentView
         {
             get { return _currentView; }
-            set 
-            { 
+            set
+            {
                 _currentView = value;
                 OnPropertyChanged();
             }
@@ -31,6 +46,10 @@ namespace ExploreRussia.MVVM.ViewModel
 
         public MainViewModel()
         {
+            userRepository = new UserRepository();
+            CurrentUserAccount = new UserAccountModel();
+            LoadCurrentUserData();
+
             HomeVM = new HomeViewModel();
             DiscoveryVM = new DiscoveryViewModel();
 
@@ -45,6 +64,20 @@ namespace ExploreRussia.MVVM.ViewModel
             {
                 CurrentView = DiscoveryVM;
             });
+        }
+        private void LoadCurrentUserData()
+        {
+            var user = userRepository.GetByUsername(Thread.CurrentPrincipal.Identity.Name);
+            if (user != null)
+            {
+                CurrentUserAccount.Username = user.Username;
+                CurrentUserAccount.DisplayName = $"Здравствуйте {user.Name} {user.LastName} ;)";
+                CurrentUserAccount.ProfilePicture = null;
+            }
+            else
+            {
+                CurrentUserAccount.DisplayName = "Пользователь не зарегистрирован";
+            }
         }
     }
 }

@@ -1,0 +1,54 @@
+﻿<Window x:Class="ExploreRussia.MVVM.View.LoginView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:view="clr-namespace:ExploreRussia.MVVM.View"
+        xmlns:viewModel ="clr-namespace:ExploreRussia.MVVM.ViewModel"
+        xmlns:customcontrols ="clr-namespace:ExploreRussia.UI.CustomControls"
+        mc:Ignorable="d"
+        Title="LoginView" Height="450" Width="800">
+    <Window.DataContext>
+        <viewModel:LoginViewModel/>
+    </Window.DataContext>
+
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibility"/>
+    </Window.Resources>
+    
+    <Window.Visibility>
+        <Binding Path="IsViewVisible" Mode="TwoWay" Converter="{StaticResource BooleanToVisibility}"/>
+    </Window.Visibility>
+    <Border Background="{StaticResource ColorBackground}" CornerRadius="20">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Vertical"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        >
+                <TextBox Height="40"
+                         Width="200"
+                         Margin="10"
+                         Foreground="Black"
+                         Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"/>
+                <customcontrols:BindablePasswordBox Password="{Binding Password,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    
+                </customcontrols:BindablePasswordBox>
+                <Button Height="40"
+                        Width="200"
+                        Margin="10"
+                         Command="{Binding LoginCommand}"/>
+                <TextBlock Text="{Binding ErrorMessage}"
+                           Foreground="Red"
+                           TextWrapping="Wrap"
+                           Width="200"/>
+            </StackPanel>
+
+        </Grid>
+    </Border>
+</Window>

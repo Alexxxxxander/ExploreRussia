@@ -1,4 +1,4 @@
-﻿<Window x:Class="ExploreRussia.MainWindow"
+﻿<Window x:Class="ExploreRussia.MainView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -71,7 +71,13 @@
                         HorizontalAlignment="Right"
                         Click="btn_Close_Click"/>
             </StackPanel>
-            
+            <TextBlock Text="{Binding CurrentUserAccount.DisplayName}"
+                       Grid.Row="1"
+                       VerticalAlignment="Bottom"
+                       FontSize="10"
+                       Margin="10, 0, 10, 10"
+                       HorizontalAlignment="Center"/>
+
         </Grid>
     </Border>
 
