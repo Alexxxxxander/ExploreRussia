@@ -23,6 +23,7 @@ namespace ExploreRussia.UI.CustomControls
 
         public static readonly DependencyProperty PasswordProperty =
             DependencyProperty.Register("Password", typeof(String), typeof(BindablePasswordBox));
+
         public String Password
         {
             get { return (String)GetValue(PasswordProperty); }
@@ -32,11 +33,35 @@ namespace ExploreRussia.UI.CustomControls
         {
             InitializeComponent();
             txtPassword.PasswordChanged += OnPasswordChanger;
+            txtBoxPassword.TextChanged += OnPasswordChanger;
+            txtBoxPassword.Visibility = System.Windows.Visibility.Collapsed;
+
         }
 
         private void OnPasswordChanger(object sender, RoutedEventArgs e)
         {
-            Password = txtPassword.Password;
+            if (txtBoxPassword.Visibility == Visibility.Visible) 
+            {
+                Password = txtBoxPassword.Text;
+            }
+            else
+            {
+                Password = txtPassword.Password;
+            }
+        }
+
+        private void chkBox_Checked(object sender, RoutedEventArgs e)
+        {        
+            txtBoxPassword.Visibility = Visibility.Visible; 
+            txtPassword.Visibility = Visibility.Collapsed;
+            txtBoxPassword.Text = Password;
+        }
+
+        private void chkBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            txtPassword.Visibility = Visibility.Visible;
+            txtBoxPassword.Visibility = Visibility.Collapsed;
+            txtPassword.Password = Password;
         }
     }
 }

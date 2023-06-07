@@ -1,5 +1,8 @@
-﻿using System.Windows;
+﻿using System.Runtime.InteropServices;
+using System;
+using System.Windows;
 using System.Windows.Input;
+using System.Windows.Interop;
 
 namespace ExploreRussia
 {
@@ -15,7 +18,7 @@ namespace ExploreRussia
 
         private void btn_Close_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Application.Current.Shutdown();
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
@@ -24,6 +27,31 @@ namespace ExploreRussia
             {
                 this.DragMove();
             }
+        }
+
+        [DllImport("user32.dll")]
+
+        public static extern IntPtr SendMessage(IntPtr hWnd, int wMsg, int wParam, int lParam);
+        private void pnlControlBar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            WindowInteropHelper helper = new WindowInteropHelper(this);
+            SendMessage(helper.Handle, 161, 2, 0);
+        }
+
+        private void btnMinimize_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
+        private void btnMaximize_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.WindowState == WindowState.Normal)
+                this.WindowState = WindowState.Maximized;
+            else this.WindowState = WindowState.Normal;
+        }
+
+        private void pnlConrolBar_MouseEnter(object sender, MouseEventArgs e)
+        {
+            this.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
         }
     }
 }

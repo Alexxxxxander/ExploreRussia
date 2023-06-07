@@ -1,4 +1,5 @@
 ﻿using System.Windows.Controls;
+using ExploreRussia.MVVM.Repositories;
 
 namespace ExploreRussia.MVVM.View
 {
@@ -10,6 +11,9 @@ namespace ExploreRussia.MVVM.View
         public HomeView()
         {
             InitializeComponent();
+            TourRepository tourRepository = new TourRepository();
+            txtBox.Text = tourRepository.GetCount().ToString();
+            dGrid.ItemsSource = tourRepository.GetByAll();
         }
     }
 }
