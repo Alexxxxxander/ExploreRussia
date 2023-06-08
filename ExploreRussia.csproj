@@ -168,7 +168,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BL\" />
-    <Folder Include="DB\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="UI\res\logo.jpeg" />
@@ -181,6 +180,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DB\ExploreRussia.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
