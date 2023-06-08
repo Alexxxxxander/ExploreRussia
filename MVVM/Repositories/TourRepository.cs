@@ -26,7 +26,7 @@ namespace ExploreRussia.MVVM.Repositories
             IEnumerable<TourModel> tours = new List<TourModel>();
             if(GetCount() > 0)
             {
-                                {
+                try{
                     using (var connection = GetConnection())
                     using (var command = new SqlCommand())
                     {
@@ -54,12 +54,14 @@ namespace ExploreRussia.MVVM.Repositories
                                     AgeMin = Convert.ToInt32(reader[12]),
                                     Actual = Convert.ToBoolean(reader[13]),
                                     RegionId = Convert.ToInt32(reader[14]),
+                                    Description = reader[15].ToString(),
                                 };
                                 tours = tours.Append<TourModel>(tour);
                             }
                         }
                     }
                 }
+                catch (Exception ex) { MessageBox.Show(ex.Message); }
 
 
             }
@@ -98,6 +100,7 @@ namespace ExploreRussia.MVVM.Repositories
                                 AgeMin = Convert.ToInt32(reader[11]),
                                 Actual = Convert.ToBoolean(reader[12]),
                                 RegionId = Convert.ToInt32(reader[13]),
+                                Description = reader[14].ToString(),    
                             };
                         }
                     }

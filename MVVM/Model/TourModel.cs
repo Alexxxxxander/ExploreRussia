@@ -23,5 +23,6 @@ namespace ExploreRussia.MVVM.Model
         public int AgeMin { get; set; }
         public bool Actual { get; set; }
         public int RegionId { get; set; }
+        public string Description { get; set; }
     }
 }
