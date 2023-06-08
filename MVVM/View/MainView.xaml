@@ -15,7 +15,9 @@
         AllowsTransparency ="True"
         MouseDown="Window_MouseDown"
         ResizeMode="CanResizeWithGrip"
-        FontFamily="/UI/res/Fonts/#Inter">
+        FontFamily="/UI/res/Fonts/#Inter"
+        WindowStartupLocation="CenterScreen"
+        MinHeight="200" MinWidth="400">
     <Window.DataContext>
         <viewModel:MainViewModel/>
     </Window.DataContext>

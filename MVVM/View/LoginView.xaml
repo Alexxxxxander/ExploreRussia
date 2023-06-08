@@ -7,9 +7,11 @@
         xmlns:viewModel ="clr-namespace:ExploreRussia.MVVM.ViewModel"
         xmlns:customcontrols ="clr-namespace:ExploreRussia.UI.CustomControls"
         mc:Ignorable="d"
-        Title="LoginView" Height="450" Width="800">
+        Title="Исследуй Россию" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen" WindowStyle="None"
+        >
     <Window.DataContext>
-        <viewModel:LoginViewModel/>
+        <viewModel:LoginViewModel Username="admin"/>
     </Window.DataContext>
 
     <Window.Resources>
