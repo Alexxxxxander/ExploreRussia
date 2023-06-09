@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ExploreRussia.MVVM.Model
 {
-    internal class TourModel
+    public class TourModel
     {
         public int Id { get; set; }
         public string Title { get; set; }

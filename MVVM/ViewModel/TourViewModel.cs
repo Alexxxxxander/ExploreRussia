@@ -1,9 +1,11 @@
 ﻿using ExploreRussia.Core;
 using ExploreRussia.MVVM.Model;
+using ExploreRussia.MVVM.View;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net.Http.Headers;
 using System.Runtime.Serialization;
+using System.Windows;
 using System.Windows.Input;
 
 namespace ExploreRussia.MVVM.ViewModel
@@ -11,14 +13,12 @@ namespace ExploreRussia.MVVM.ViewModel
 
     internal class TourViewModel : ObservableObject
     {
-
-
         //поля
         private TourModel _selectedItem;
         private object _topView;
 
         //команды
-        public ICommand EditTour { get; }
+        public RelayCommand TopViewEditCommand { get; set; }
 
 
         public object SelectedItem 
@@ -41,19 +41,20 @@ namespace ExploreRussia.MVVM.ViewModel
             }
         }
 
+
         public TourViewModel()
         {
-            EditTour = new RelayCommand(ExecuteEditCommand, CanExecuteEditCommand);
-            AddEditView = new A
+
+            TopViewEditCommand = new RelayCommand(o => 
+            { 
+                if (true)
+                {
+                    AddEditWindow addEditWindow = new AddEditWindow((TourModel)SelectedItem);
+                    addEditWindow.ShowDialog();
+                }
+            });
+            
         }
-        private void ExecuteEditCommand(object obj)
-        {
-          
-        }
-        private bool CanExecuteEditCommand(object arg)
-        {
-            bool isSelectItem = false;
-            return isSelectItem;
-        }
+
     }
 }

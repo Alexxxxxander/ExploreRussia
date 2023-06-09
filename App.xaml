@@ -11,6 +11,7 @@
                 <ResourceDictionary Source="/UI/res/Theme/Colors.xaml"/>
                 <ResourceDictionary Source="/UI/res/Theme/MenuButtonTheme.xaml"/>
                 <ResourceDictionary Source="/UI/res/Theme/TextBoxTheme.xaml"/>
+                <ResourceDictionary Source="/UI/res/Theme/BaseDictionary.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             
             <DataTemplate DataType="{x:Type viewModel:TourViewModel}">
@@ -20,6 +21,11 @@
             <DataTemplate DataType="{x:Type viewModel:DiscoveryViewModel}">
                 <view:DiscoveryView/>
             </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:EditTourViewModel}">
+                <view:EditTourView/>
+            </DataTemplate>
+
 
         </ResourceDictionary>
     </Application.Resources>

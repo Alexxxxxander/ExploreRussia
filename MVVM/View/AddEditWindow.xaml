@@ -1,0 +1,48 @@
+﻿<Window x:Class="ExploreRussia.MVVM.View.AddEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExploreRussia.MVVM.View"
+        mc:Ignorable="d"
+        Title="AddEditWindow" Height="450" Width="800" WindowStyle="None" Background="Transparent"
+        AllowsTransparency="True"
+        MouseDown="Window_MouseDown"
+        FontFamily="/UI/res/Fonts/#Inter">
+    <Border CornerRadius="20"
+            Background="White"
+            BorderThickness="1"
+            BorderBrush="Black">
+        <Grid>
+
+            <StackPanel VerticalAlignment="Center">
+                <TextBox Text="{Binding Title}"
+                 Height="40"
+                 Width="200">
+
+                </TextBox>
+                <TextBox Text="{Binding Description}"
+                 Height="40"
+                 Width="200">
+
+                </TextBox>
+                <TextBox Text="{Binding PeopleMax}"
+                 Height="40"
+                 Width="200">
+
+                </TextBox>
+                <TextBox Text="{Binding PeopleMin}"
+                 Height="40"
+                 Width="200">
+
+                </TextBox>
+            </StackPanel>
+            <Button Height="20"
+                Width="20"
+                Name="btn_Close"
+                Click="btn_Close_Click"
+                HorizontalAlignment="Right"/>
+        </Grid>
+    </Border>
+
+</Window>

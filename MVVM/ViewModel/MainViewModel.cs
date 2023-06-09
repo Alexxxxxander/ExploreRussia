@@ -71,7 +71,7 @@ namespace ExploreRussia.MVVM.ViewModel
             if (user != null)
             {
                 CurrentUserAccount.Username = user.Username;
-                CurrentUserAccount.DisplayName = $"Здравствуйте {user.Name} {user.LastName} ;)";
+                CurrentUserAccount.DisplayName = $"Здравствуйте {user.Name} {user.LastName}";
                 CurrentUserAccount.ProfilePicture = null;
             }
             else

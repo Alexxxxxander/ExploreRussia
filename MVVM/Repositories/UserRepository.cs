@@ -35,7 +35,7 @@ namespace ExploreRussia.MVVM.Repositories
                     validUser = command.ExecuteScalar() == null ? false : true;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 MessageBox.Show("Ошибка подкобчения к БД", "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
             }
@@ -82,7 +82,7 @@ namespace ExploreRussia.MVVM.Repositories
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 MessageBox.Show("Ошибка подключения к БД", "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
             }

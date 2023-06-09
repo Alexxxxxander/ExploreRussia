@@ -11,7 +11,7 @@ namespace ExploreRussia.MVVM.ViewModel
 {
     internal class LoginViewModel : ObservableObject
     {
-        private string _username = "TextUsername";
+        private string _username = "admin";
         private string _password;
         private string _errorMessage;
         private bool _isViewVisible = true;
@@ -60,7 +60,7 @@ namespace ExploreRussia.MVVM.ViewModel
         public ICommand ShowPasswordCommand { get; }
         public ICommand RememberPasswordCommand { get; }
 
-        //Constructor
+        //Конструктор
         public LoginViewModel()
         {
             userRepository = new UserRepository();
@@ -86,7 +86,6 @@ namespace ExploreRussia.MVVM.ViewModel
                 Thread.CurrentPrincipal = new GenericPrincipal(
                     new GenericIdentity(Username),null);
                     IsViewVisible = false;
-
             }
             else
             {

@@ -9,7 +9,9 @@
         mc:Ignorable="d"
         Title="Исследуй Россию" Height="450" Width="800"
         WindowStartupLocation="CenterScreen" WindowStyle="None"
-        >
+        AllowsTransparency="True"
+        Background="Transparent"
+        FontFamily="/UI/res/Fonts/#Inter">
     <Window.DataContext>
         <viewModel:LoginViewModel Username="admin"/>
     </Window.DataContext>
@@ -33,7 +35,7 @@
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
                         >
-                <TextBox Height="40"
+                <TextBox Style="{DynamicResource TextBoxStyleRound}" Height="40"
                          Width="200"
                          Margin="10"
                          Foreground="Black"
@@ -41,10 +43,12 @@
                 <customcontrols:BindablePasswordBox Password="{Binding Password,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                     
                 </customcontrols:BindablePasswordBox>
-                <Button Height="40"
+                <Button Style="{DynamicResource ButtonStyleRound}" Height="40"
                         Width="200"
                         Margin="10"
-                         Command="{Binding LoginCommand}"/>
+                        Command="{Binding LoginCommand}"
+                        Content="Войти"
+                        Foreground ="Black"/>
                 <TextBlock Text="{Binding ErrorMessage}"
                            Foreground="Red"
                            TextWrapping="Wrap"
