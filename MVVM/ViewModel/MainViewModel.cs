@@ -12,7 +12,7 @@ namespace ExploreRussia.MVVM.ViewModel
         public RelayCommand DiscoveryViewCommand { get; set; }
 
         //ViewModels
-        public HomeViewModel HomeVM { get; set; }
+        public TourViewModel HomeVM { get; set; }
         public DiscoveryViewModel DiscoveryVM { get; set; }
 
         //поля
@@ -50,7 +50,7 @@ namespace ExploreRussia.MVVM.ViewModel
             CurrentUserAccount = new UserAccountModel();
             LoadCurrentUserData();
 
-            HomeVM = new HomeViewModel();
+            HomeVM = new TourViewModel();
             DiscoveryVM = new DiscoveryViewModel();
 
             CurrentView = HomeVM;

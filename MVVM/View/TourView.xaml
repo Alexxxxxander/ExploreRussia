@@ -4,14 +4,24 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ExploreRussia.MVVM.View"
+             xmlns:viewModel="clr-namespace:ExploreRussia.MVVM.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.DataContext>
+        <viewModel:TourViewModel/>
+    </UserControl.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="160"/>
         </Grid.ColumnDefinitions>
-        <DataGrid x:Name="dGrid" AutoGenerateColumns="False" CanUserResizeColumns="True">
+        <ContentControl >
+            
+        </ContentControl>
+        <DataGrid x:Name="dGrid"
+                  AutoGenerateColumns="False"
+                  CanUserResizeColumns="True"
+                  SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Заголовок" Binding="{Binding Title}"/>
                 <DataGridTextColumn Header="Описание" Binding="{Binding Description}"/>
