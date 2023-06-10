@@ -47,7 +47,7 @@ namespace ExploreRussia.MVVM.ViewModel
 
             TopViewEditCommand = new RelayCommand(o => 
             { 
-                if (true)
+                if (SelectedItem != null)
                 {
                     AddEditWindow addEditWindow = new AddEditWindow((TourModel)SelectedItem);
                     addEditWindow.ShowDialog();

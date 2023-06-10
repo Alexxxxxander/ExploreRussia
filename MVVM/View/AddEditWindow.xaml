@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ExploreRussia.MVVM.View"
         mc:Ignorable="d"
-        Title="AddEditWindow" Height="450" Width="800" WindowStyle="None" Background="Transparent"
+        Title="AddEditWindow" Height="850" Width="800" WindowStyle="None" Background="Transparent"
         AllowsTransparency="True"
         MouseDown="Window_MouseDown"
         FontFamily="/UI/res/Fonts/#Inter">
@@ -14,34 +14,180 @@
             BorderThickness="1"
             BorderBrush="Black">
         <Grid>
-
-            <StackPanel VerticalAlignment="Center">
-                <TextBox Text="{Binding Title}"
-                 Height="40"
-                 Width="200">
-
-                </TextBox>
-                <TextBox Text="{Binding Description}"
-                 Height="40"
-                 Width="200">
-
-                </TextBox>
-                <TextBox Text="{Binding PeopleMax}"
-                 Height="40"
-                 Width="200">
-
-                </TextBox>
-                <TextBox Text="{Binding PeopleMin}"
-                 Height="40"
-                 Width="200">
-
-                </TextBox>
-            </StackPanel>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition />
+                <ColumnDefinition Width="50"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="*"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="20"/>
+            </Grid.RowDefinitions>
             <Button Height="20"
                 Width="20"
+                    Grid.Column="3"
                 Name="btn_Close"
                 Click="btn_Close_Click"
                 HorizontalAlignment="Right"/>
+            <TextBox Text="{Binding Title}"
+                     Style="{DynamicResource TextBoxStyleRound}"
+                     Grid.Column="2"
+                     Grid.Row="1"
+                     />
+            <DatePicker Style="{DynamicResource DatePickerStyle}" Grid.Row="2" 
+                        Grid.Column="2" Height="40" Width="260"
+                        SelectedDate="{Binding DateStart}"/>
+            <DatePicker Style="{DynamicResource DatePickerStyle}" Grid.Row="3" 
+                        Grid.Column="2" Height="40" Width="260"
+                        SelectedDate="{Binding DateEnd}"/>
+
+            <TextBox Text="{Binding Cost}"
+                     Style="{DynamicResource TextBoxStyleRound}"
+                     Grid.Column="2"
+                     Grid.Row="4"
+                     />
+            <TextBox Text="{Binding Rate}"
+                     Style="{DynamicResource TextBoxStyleRound}"
+                     Grid.Column="2"
+                     Grid.Row="5"
+                     />
+            <TextBox Text="{Binding ImageMain}"
+                     Style="{DynamicResource TextBoxStyleRound}"
+                     Grid.Column="2"
+                     Grid.Row="6"
+                     />
+            <TextBox Text="{Binding Route}"
+                     Style="{DynamicResource TextBoxStyleRound}"
+                     Grid.Column="2"
+                     Grid.Row="7"
+                     />
+            <TextBox Text="{Binding PeopleMin}"
+                     Style="{DynamicResource TextBoxStyleRound}"
+                     Grid.Column="2"
+                     Grid.Row="8"
+                     />
+            <TextBox Text="{Binding PeopleMax}"
+                     Style="{DynamicResource TextBoxStyleRound}"
+                     Grid.Column="2"
+                     Grid.Row="9"
+                     />
+            <TextBox Text="{Binding PeopleMax}"
+                     Style="{DynamicResource TextBoxStyleRound}"
+                     Grid.Column="2"
+                     Grid.Row="10"
+                     />
+            <TextBox Text="{Binding PeopleMax}"
+                     Style="{DynamicResource TextBoxStyleRound}"
+                     Grid.Column="2"
+                     Grid.Row="12"
+                     />
+            <TextBox Text="{Binding PeopleMax}"
+                     Style="{DynamicResource TextBoxStyleRound}"
+                     Grid.Column="2"
+                     Grid.Row="15"
+                     />
+            <ComboBox ItemContainerStyle="{DynamicResource ComboBoxItemContainerStyle}"
+                      Style="{DynamicResource ComboBoxStyl}" 
+                      Grid.Row="14" 
+                      Grid.Column="2"
+                      Height="40"
+                      Width="260"/>
+            <CheckBox Style="{DynamicResource ToggleButton}"
+                      Grid.Row="13"
+                      Grid.Column="2"
+                      HorizontalAlignment="Center"/>
+            <Label Content="Заголовок"
+                   Style="{DynamicResource LabelStyleAddEdit}"
+                   Grid.Column="1"
+                   VerticalAlignment="Center"
+                   Grid.Row="1"/>
+            <Label Content="Дата начала"
+                   Style="{DynamicResource LabelStyleAddEdit}"
+                   Grid.Column="1"
+                   VerticalAlignment="Center"
+                   Grid.Row="2"/>
+            <Label Content="Дата конца"
+                   Style="{DynamicResource LabelStyleAddEdit}"
+                   Grid.Column="1"
+                   VerticalAlignment="Center"
+                   Grid.Row="3"/>
+            <Label Content="Стоимость"
+                   Style="{DynamicResource LabelStyleAddEdit}"
+                   Grid.Column="1"
+                   VerticalAlignment="Center"
+                   Grid.Row="4"/>
+            <Label Content="Рейтинг"
+                   Style="{DynamicResource LabelStyleAddEdit}"
+                   Grid.Column="1"
+                   VerticalAlignment="Center"
+                   Grid.Row="5"/>
+            <Label Content="Главное изображение"
+                   Style="{DynamicResource LabelStyleAddEdit}"
+                   Grid.Column="1"
+                   VerticalAlignment="Center"
+                   Grid.Row="6"/>
+            <Label Content="Маршрут"
+                   Style="{DynamicResource LabelStyleAddEdit}"
+                   Grid.Column="1"
+                   VerticalAlignment="Center"
+                   Grid.Row="7"/>
+            <Label Content="Минимальное количество человек"
+                   Style="{DynamicResource LabelStyleAddEdit}"
+                   Grid.Column="1"
+                   VerticalAlignment="Center"
+                   Grid.Row="8"/>
+            <Label Content="Максимальное количество человек"
+                   Style="{DynamicResource LabelStyleAddEdit}"
+                   Grid.Column="1"
+                   VerticalAlignment="Center"
+                   Grid.Row="9"/>
+            <Label Content="Расстояние"
+                   Style="{DynamicResource LabelStyleAddEdit}"
+                   Grid.Column="1"
+                   VerticalAlignment="Center"
+                   Grid.Row="10"/>
+            <Label Content="Сложность"
+                   Style="{DynamicResource LabelStyleAddEdit}"
+                   Grid.Column="1"
+                   VerticalAlignment="Center"
+                   Grid.Row="11"/>
+            <Label Content="Возраст от"
+                   Style="{DynamicResource LabelStyleAddEdit}"
+                   Grid.Column="1"
+                   VerticalAlignment="Center"
+                   Grid.Row="12"/>
+            <Label Content="Актуальность"
+                   Style="{DynamicResource LabelStyleAddEdit}"
+                   Grid.Column="1"
+                   VerticalAlignment="Center"
+                   Grid.Row="13"/>
+            <Label Content="Регион"
+                   Style="{DynamicResource LabelStyleAddEdit}"
+                   Grid.Column="1"
+                   VerticalAlignment="Center"
+                   Grid.Row="14"/>
+            <Label Content="Описание"
+                   Style="{DynamicResource LabelStyleAddEdit}"
+                   Grid.Column="1"
+                   VerticalAlignment="Center"
+                   Grid.Row="15"/>
         </Grid>
     </Border>
 

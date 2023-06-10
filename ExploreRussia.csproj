@@ -41,6 +41,7 @@
   </PropertyGroup>
   <PropertyGroup />
   <ItemGroup>
+    <Reference Include="PresentationFramework.Aero2" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -73,10 +74,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\View\EditTourView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MVVM\View\TourView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -98,6 +95,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UI\res\Theme\Colors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\res\Theme\ComboBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\res\Theme\DatePickerDict.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -128,7 +133,6 @@
     <Compile Include="MVVM\Repositories\TourRepository.cs" />
     <Compile Include="MVVM\Repositories\UserRepository.cs" />
     <Compile Include="MVVM\ViewModel\DiscoveryViewModel.cs" />
-    <Compile Include="MVVM\ViewModel\EditTourViewModel.cs" />
     <Compile Include="MVVM\ViewModel\TourViewModel.cs" />
     <Compile Include="MVVM\ViewModel\LoginViewModel.cs" />
     <Compile Include="MVVM\ViewModel\MainViewModel.cs" />
@@ -137,9 +141,6 @@
     </Compile>
     <Compile Include="MVVM\View\DiscoveryView.xaml.cs">
       <DependentUpon>DiscoveryView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MVVM\View\EditTourView.xaml.cs">
-      <DependentUpon>EditTourView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\TourView.xaml.cs">
       <DependentUpon>TourView.xaml</DependentUpon>
@@ -157,6 +158,10 @@
       <DependentUpon>MainView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="UI\res\Theme\ToggleButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

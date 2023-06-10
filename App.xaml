@@ -12,6 +12,9 @@
                 <ResourceDictionary Source="/UI/res/Theme/MenuButtonTheme.xaml"/>
                 <ResourceDictionary Source="/UI/res/Theme/TextBoxTheme.xaml"/>
                 <ResourceDictionary Source="/UI/res/Theme/BaseDictionary.xaml"/>
+                <ResourceDictionary Source="\UI\res\Theme\ToggleButton.xaml"/>
+                <ResourceDictionary Source="UI\res\Theme\ComboBox.xaml"/>
+                <ResourceDictionary Source="\UI\res\Theme\DatePickerDict.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             
             <DataTemplate DataType="{x:Type viewModel:TourViewModel}">
@@ -21,12 +24,6 @@
             <DataTemplate DataType="{x:Type viewModel:DiscoveryViewModel}">
                 <view:DiscoveryView/>
             </DataTemplate>
-
-            <DataTemplate DataType="{x:Type viewModel:EditTourViewModel}">
-                <view:EditTourView/>
-            </DataTemplate>
-
-
         </ResourceDictionary>
     </Application.Resources>
 </Application>
