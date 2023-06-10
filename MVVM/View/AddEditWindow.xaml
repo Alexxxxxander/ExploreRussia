@@ -16,7 +16,7 @@
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="50"/>
-                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="0.8*"/>
                 <ColumnDefinition />
                 <ColumnDefinition Width="50"/>
             </Grid.ColumnDefinitions>
@@ -88,31 +88,46 @@
                      Grid.Column="2"
                      Grid.Row="9"
                      />
-            <TextBox Text="{Binding PeopleMax}"
+            <TextBox Text="{Binding Lenght}"
                      Style="{DynamicResource TextBoxStyleRound}"
                      Grid.Column="2"
                      Grid.Row="10"
                      />
-            <TextBox Text="{Binding PeopleMax}"
+            <ComboBox ItemContainerStyle="{DynamicResource ComboBoxItemContainerStyle}"
+                      Style="{DynamicResource ComboBoxStyl}" 
+                      Grid.Row="11" 
+                      Grid.Column="2"
+                      Height="40"
+                      Width="260"/>
+            <TextBox Text="{Binding AgeMin}"
                      Style="{DynamicResource TextBoxStyleRound}"
                      Grid.Column="2"
                      Grid.Row="12"
                      />
-            <TextBox Text="{Binding PeopleMax}"
-                     Style="{DynamicResource TextBoxStyleRound}"
-                     Grid.Column="2"
-                     Grid.Row="15"
-                     />
+            <CheckBox Style="{DynamicResource ToggleButton}"
+                      Grid.Row="13"
+                      Grid.Column="2"
+                      HorizontalAlignment="Center"
+                      IsChecked="{Binding Actual}"/>
             <ComboBox ItemContainerStyle="{DynamicResource ComboBoxItemContainerStyle}"
                       Style="{DynamicResource ComboBoxStyl}" 
                       Grid.Row="14" 
                       Grid.Column="2"
                       Height="40"
-                      Width="260"/>
-            <CheckBox Style="{DynamicResource ToggleButton}"
-                      Grid.Row="13"
-                      Grid.Column="2"
-                      HorizontalAlignment="Center"/>
+                      Width="260"
+                      VerticalContentAlignment="Center"
+                      Padding="10,0,0,0">
+                <ComboBoxItem>Байкал</ComboBoxItem>
+                <ComboBoxItem>Адыгея</ComboBoxItem>
+            </ComboBox>
+
+            <TextBox Text="{Binding Description}"
+                     Style="{DynamicResource TextBoxStyleRound}"
+                     Grid.Column="2"
+                     Grid.Row="15"
+                     />
+
+
             <Label Content="Заголовок"
                    Style="{DynamicResource LabelStyleAddEdit}"
                    Grid.Column="1"
@@ -149,6 +164,7 @@
                    VerticalAlignment="Center"
                    Grid.Row="7"/>
             <Label Content="Минимальное количество человек"
+                 
                    Style="{DynamicResource LabelStyleAddEdit}"
                    Grid.Column="1"
                    VerticalAlignment="Center"
