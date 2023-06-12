@@ -40,7 +40,7 @@
                                 <RemoveStoryboard BeginStoryboardName="rightt"></RemoveStoryboard>
                                 <BeginStoryboard Storyboard="{StaticResource left}" x:Name="leftt" ></BeginStoryboard>
                             </Trigger.ExitActions>
-                            <Setter TargetName="button" Property="Background" Value="#20BF55"></Setter>
+                            <Setter TargetName="button" Property="Background" Value="#F2E205"></Setter>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

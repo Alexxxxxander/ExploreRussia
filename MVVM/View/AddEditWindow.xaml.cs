@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ExploreRussia.MVVM.Repositories;
 
 namespace ExploreRussia.MVVM.View
 {
@@ -26,6 +27,12 @@ namespace ExploreRussia.MVVM.View
 
             InitializeComponent();
             DataContext = tourModel;
+            DifficultyRepository difficultyRepository = new DifficultyRepository();
+             RegionRepository regionRepository = new RegionRepository();
+            cmbBoxDifficulty.ItemsSource = difficultyRepository.GetAll().ToList().Select(x => x.Name);
+            cmbBoxDifficulty.SelectedIndex = tourModel.DifficultyId - 1;
+            cmb_Regions.ItemsSource = regionRepository.GetAll().ToList().Select(x => x.Name);
+            cmb_Regions.SelectedIndex = tourModel.RegionId-1;
         }
 
         private void btn_Close_Click(object sender, RoutedEventArgs e)

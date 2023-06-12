@@ -21,7 +21,7 @@ namespace ExploreRussia.MVVM.Repositories
             throw new NotImplementedException();
         }
 
-        public IEnumerable<TourModel> GetByAll()
+        public IEnumerable<TourModel> GetAll()
         {
             IEnumerable<TourModel> tours = new List<TourModel>();
             if(GetCount() > 0)

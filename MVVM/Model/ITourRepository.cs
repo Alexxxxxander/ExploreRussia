@@ -14,6 +14,6 @@ namespace ExploreRussia.MVVM.Model
         TourModel GetById(int id);
         TourModel GetByTitle(string title);
         int GetCount();
-        IEnumerable<TourModel> GetByAll();
+        IEnumerable<TourModel> GetAll();
     }
 }

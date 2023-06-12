@@ -13,7 +13,8 @@
                 <ResourceDictionary Source="/UI/res/Theme/TextBoxTheme.xaml"/>
                 <ResourceDictionary Source="/UI/res/Theme/BaseDictionary.xaml"/>
                 <ResourceDictionary Source="\UI\res\Theme\ToggleButton.xaml"/>
-                <ResourceDictionary Source="UI\res\Theme\ComboBox.xaml"/>
+                <ResourceDictionary Source="\UI\res\Theme\ComboBox.xaml"/>
+                <ResourceDictionary Source="\UI\res\Theme\ButtonCancelDict.xaml"/>
                 <ResourceDictionary Source="\UI\res\Theme\DatePickerDict.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             

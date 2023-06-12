@@ -12,7 +12,7 @@ namespace ExploreRussia.MVVM.View
         {
             InitializeComponent();
             TourRepository tourRepository = new TourRepository();
-            dGrid.ItemsSource = tourRepository.GetByAll();
+            dGrid.ItemsSource = tourRepository.GetAll();
         }
     }
 }

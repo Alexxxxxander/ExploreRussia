@@ -94,6 +94,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UI\res\Theme\ButtonCancelDict.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UI\res\Theme\Colors.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -124,11 +128,18 @@
     </Compile>
     <Compile Include="Core\ObservableObject.cs" />
     <Compile Include="Core\RelayCommand.cs" />
+    <Compile Include="MVVM\Converters\ComboBoxPopupWidthConverter.cs" />
+    <Compile Include="MVVM\Model\DifficultyModel.cs" />
+    <Compile Include="MVVM\Model\IDifficultyRepository.cs" />
+    <Compile Include="MVVM\Model\IRegionRepository.cs" />
     <Compile Include="MVVM\Model\ITourRepository.cs" />
     <Compile Include="MVVM\Model\IUserRepository.cs" />
+    <Compile Include="MVVM\Model\RegionModel.cs" />
     <Compile Include="MVVM\Model\TourModel.cs" />
     <Compile Include="MVVM\Model\UserAccountModel.cs" />
     <Compile Include="MVVM\Model\UserModel.cs" />
+    <Compile Include="MVVM\Repositories\DifficultyRepository.cs" />
+    <Compile Include="MVVM\Repositories\RegionRepository.cs" />
     <Compile Include="MVVM\Repositories\RepositoryBase.cs" />
     <Compile Include="MVVM\Repositories\TourRepository.cs" />
     <Compile Include="MVVM\Repositories\UserRepository.cs" />
@@ -205,6 +216,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DB\ExploreRussia.sql" />
+    <Resource Include="UI\res\Icons\Cancel.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

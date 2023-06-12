@@ -15,10 +15,10 @@
             BorderBrush="Black">
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="50"/>
-                <ColumnDefinition Width="0.8*"/>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="*"/>
                 <ColumnDefinition />
-                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="80"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition/>
@@ -40,9 +40,16 @@
                 <RowDefinition Height="70"/>
                 <RowDefinition Height="20"/>
             </Grid.RowDefinitions>
-            <Button Height="20"
+            <Label Content="Изменить"
+                   Grid.Row="0"
+                   Grid.Column="1"
+                   Grid.ColumnSpan="2"
+                   HorizontalAlignment="Center"
+                   FontSize="20" VerticalAlignment="Center"/>
+            <Button Style="{DynamicResource ButtonStyleCancel}" Height="20"
                 Width="20"
                     Grid.Column="3"
+                    Margin="0,10,20,0"
                 Name="btn_Close"
                 Click="btn_Close_Click"
                 HorizontalAlignment="Right"/>
@@ -98,7 +105,9 @@
                       Grid.Row="11" 
                       Grid.Column="2"
                       Height="40"
-                      Width="260"/>
+                      Width="260"
+                      VerticalContentAlignment="Center"
+                      x:Name="cmbBoxDifficulty"/>
             <TextBox Text="{Binding AgeMin}"
                      Style="{DynamicResource TextBoxStyleRound}"
                      Grid.Column="2"
@@ -111,14 +120,14 @@
                       IsChecked="{Binding Actual}"/>
             <ComboBox ItemContainerStyle="{DynamicResource ComboBoxItemContainerStyle}"
                       Style="{DynamicResource ComboBoxStyl}" 
-                      Grid.Row="14" 
+                      Grid.Row="14"
+                      IsEditable="True"
                       Grid.Column="2"
                       Height="40"
                       Width="260"
                       VerticalContentAlignment="Center"
-                      Padding="10,0,0,0">
-                <ComboBoxItem>Байкал</ComboBoxItem>
-                <ComboBoxItem>Адыгея</ComboBoxItem>
+                      Padding="0,0,0,0"
+                      x:Name="cmb_Regions">
             </ComboBox>
 
             <TextBox Text="{Binding Description}"
@@ -204,6 +213,15 @@
                    Grid.Column="1"
                    VerticalAlignment="Center"
                    Grid.Row="15"/>
+            <Button x:Name="btn_Save"
+                    Width="260"
+                    Height="40"
+                    Style="{StaticResource ButtonStyleRound}"
+                    Grid.Row="16"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="2"
+                    HorizontalAlignment="Center"
+                    Content="Сохранить"/>
         </Grid>
     </Border>
 
