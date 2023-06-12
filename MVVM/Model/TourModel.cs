@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlTypes;
 
 namespace ExploreRussia.MVVM.Model
 {
@@ -24,5 +25,24 @@ namespace ExploreRussia.MVVM.Model
         public bool Actual { get; set; }
         public int RegionId { get; set; }
         public string Description { get; set; }
+        public TourModel() 
+        {
+            Id = 0;
+            Title = string.Empty;
+            DateStart = DateTime.Now;
+            DateEnd = DateTime.Now;
+            Cost = 0;
+            Rate = 0;
+            ImageMain = string.Empty;
+            Route = string.Empty;
+            PeopleMin = 1;
+            PeopleMax = 2;
+            Lenght = 0;
+            DifficultyId = 1;
+            AgeMin = 1;
+            Actual = false;
+            RegionId = 1;
+            Description = string.Empty;
+        }
     }
 }

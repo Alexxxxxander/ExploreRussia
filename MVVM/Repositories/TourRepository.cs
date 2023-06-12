@@ -63,7 +63,7 @@ namespace ExploreRussia.MVVM.Repositories
                     "AgeMin = @ageMin, " +
                     "Actual = @actual, " +
                     "RegionId = @regionId, " +
-                    "Description=@description " +
+                    "Description = @description " +
                     "WHERE Id = @id";
                 command.Parameters.Add("@id", System.Data.SqlDbType.Int).Value = tourModel.Id;
                 command.Parameters.Add("@title", System.Data.SqlDbType.NVarChar).Value = tourModel.Title;
@@ -211,9 +211,17 @@ namespace ExploreRussia.MVVM.Repositories
             return result;
         }
 
-        public void Remove(int id)
+        public void Remove(TourModel tourModel)
         {
-            throw new NotImplementedException();
+            using (var connection = GetConnection())
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "delete from [Tour] where Id=@id";
+                command.Parameters.Add("@id", System.Data.SqlDbType.Int).Value = tourModel.Id;
+                command.ExecuteNonQuery();
+            }
         }
     }
 }

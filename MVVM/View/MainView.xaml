@@ -42,21 +42,23 @@
                    Grid.Row="1"
                    Grid.ColumnSpan="1"/>
             <StackPanel Grid.Row="2">
+                <RadioButton Content="Главная"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Height="50" Foreground="Black"
+                             FontSize="26"
+                             Command="{Binding HomeViewCommand}"/>
                 <RadioButton Content="Туры"
                              Style="{StaticResource MenuButtonTheme}"
                              Height="50" Foreground="Black"
                              FontSize="26"
                              IsChecked="True"
-                             Command="{Binding HomeViewCommand}"/>
+                             Command="{Binding TourViewCommand}"/>
                 <RadioButton Content="Заявки"
                              Style="{StaticResource MenuButtonTheme}"
                              Height="50" Foreground="Black"
                              FontSize="26"
                              Command="{Binding DiscoveryViewCommand}"/>
-                <RadioButton Content="Главная"
-                             Style="{StaticResource MenuButtonTheme}"
-                             Height="50" Foreground="Black"
-                             FontSize="26"/>
+
             </StackPanel>
 
             <TextBox Width="250"

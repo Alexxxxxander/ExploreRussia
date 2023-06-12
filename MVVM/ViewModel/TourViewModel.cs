@@ -1,11 +1,13 @@
 ﻿using ExploreRussia.Core;
 using ExploreRussia.MVVM.Model;
+using ExploreRussia.MVVM.Repositories;
 using ExploreRussia.MVVM.View;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net.Http.Headers;
 using System.Runtime.Serialization;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace ExploreRussia.MVVM.ViewModel
@@ -20,6 +22,7 @@ namespace ExploreRussia.MVVM.ViewModel
         //команды
         public RelayCommand TopViewEditCommand { get; set; }
         public RelayCommand TopViewAddCommand {  get; set; }
+        public RelayCommand DeleteTourCommand { get; set; }
 
 
         public object SelectedItem 
@@ -56,9 +59,18 @@ namespace ExploreRussia.MVVM.ViewModel
             });
             TopViewAddCommand = new RelayCommand(o =>
             {
-                AddEditWindow addEditWindow = new AddEditWindow(null);
+                TourModel tourModel = new TourModel();
+                AddEditWindow addEditWindow = new AddEditWindow(tourModel);
                 addEditWindow.ShowDialog();
 
+            });
+            DeleteTourCommand = new RelayCommand(o =>
+            {
+                if (SelectedItem != null)
+                {
+                    TourRepository tourRepository = new TourRepository();
+                    tourRepository.Remove((TourModel)SelectedItem); 
+                }
             });
             
         }

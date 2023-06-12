@@ -10,7 +10,7 @@ namespace ExploreRussia.MVVM.Model
     {
         void Add(TourModel tourModel);
         void Edit(TourModel tourModel);
-        void Remove(int id);
+        void Remove(TourModel tourModel);
         TourModel GetById(int id);
         TourModel GetByTitle(string title);
         int GetCount();

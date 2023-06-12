@@ -22,6 +22,7 @@ namespace ExploreRussia.MVVM.View
     public partial class AddEditWindow : Window
     {
         public TourModel _tourModel;
+      
         public AddEditWindow(TourModel tourModel)
         {
 
@@ -31,9 +32,18 @@ namespace ExploreRussia.MVVM.View
             DifficultyRepository difficultyRepository = new DifficultyRepository();
             RegionRepository regionRepository = new RegionRepository();
             cmbBoxDifficulty.ItemsSource = difficultyRepository.GetAll().ToList().Select(x => x.Name);
-            cmbBoxDifficulty.SelectedIndex = tourModel.DifficultyId - 1;
             cmb_Regions.ItemsSource = regionRepository.GetAll().ToList().Select(x => x.Name);
-            cmb_Regions.SelectedIndex = tourModel.RegionId-1;
+            if (_tourModel.Id > 0)
+            {
+                cmbBoxDifficulty.SelectedIndex = tourModel.DifficultyId - 1;
+                cmb_Regions.SelectedIndex = tourModel.RegionId - 1;
+            }
+            else
+            {
+                lbl_AddEdit.Content = "Добавить";
+            }
+
+
         }
 
         private void btn_Close_Click(object sender, RoutedEventArgs e)
@@ -52,14 +62,16 @@ namespace ExploreRussia.MVVM.View
         {
             TourRepository tourRepository = new TourRepository();
             if ( _tourModel.Id > 0)
-            {
+            {              
                 tourRepository.Edit(_tourModel);
                 MessageBox.Show("Успешно");
+                this.Close();
             }
             else
             {
                 tourRepository.Add(_tourModel);
                 MessageBox.Show("Успешно");
+                this.Close();
             }
         }
     }

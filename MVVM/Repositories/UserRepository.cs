@@ -72,7 +72,7 @@ namespace ExploreRussia.MVVM.Repositories
                         {
                             user = new UserModel()
                             {
-                                Id = reader[0].ToString(),
+                                Id = Int32.Parse(reader[0].ToString()),
                                 Username = reader[1].ToString(),
                                 Password = string.Empty,
                                 Name = reader[3].ToString(),

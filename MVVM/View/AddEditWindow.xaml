@@ -45,7 +45,8 @@
                    Grid.Column="1"
                    Grid.ColumnSpan="2"
                    HorizontalAlignment="Center"
-                   FontSize="20" VerticalAlignment="Center"/>
+                   FontSize="20" VerticalAlignment="Center"
+                   x:Name="lbl_AddEdit"/>
             <Button Style="{DynamicResource ButtonStyleCancel}" Height="20"
                 Width="20"
                     Grid.Column="3"
@@ -57,6 +58,7 @@
                      Style="{DynamicResource TextBoxStyleRound}"
                      Grid.Column="2"
                      Grid.Row="1"
+                     x:Name="txtBoxTitle"
                      />
             <DatePicker Style="{DynamicResource DatePickerStyle}" Grid.Row="2" 
                         Grid.Column="2" Height="40" Width="260"

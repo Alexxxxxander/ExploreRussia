@@ -8,12 +8,14 @@ namespace ExploreRussia.MVVM.ViewModel
     class MainViewModel : ObservableObject
     {
         //команды перехода
-        public RelayCommand HomeViewCommand { get; set; }
+        public RelayCommand TourViewCommand { get; set; }
         public RelayCommand DiscoveryViewCommand { get; set; }
+        public RelayCommand HomeViewCommand { get; set; }
 
         //ViewModels
-        public TourViewModel HomeVM { get; set; }
+        public TourViewModel TourVM { get; set; }
         public DiscoveryViewModel DiscoveryVM { get; set; }
+        public HomeViewViewModel HomeVM { get; set; }
 
         //поля
         private UserAccountModel _currentUserAccount;
@@ -50,19 +52,24 @@ namespace ExploreRussia.MVVM.ViewModel
             CurrentUserAccount = new UserAccountModel();
             LoadCurrentUserData();
 
-            HomeVM = new TourViewModel();
+            TourVM = new TourViewModel();
             DiscoveryVM = new DiscoveryViewModel();
+            HomeVM = new HomeViewViewModel();
 
-            CurrentView = HomeVM;
+            CurrentView = TourVM;
 
-            HomeViewCommand = new RelayCommand(o =>
+            TourViewCommand = new RelayCommand(o =>
             {
-                CurrentView = HomeVM;
+                CurrentView = TourVM;
             });
 
             DiscoveryViewCommand = new RelayCommand(o =>
             {
                 CurrentView = DiscoveryVM;
+            });
+            HomeViewCommand = new RelayCommand(o =>
+            {
+                CurrentView = HomeVM;
             });
         }
         private void LoadCurrentUserData()

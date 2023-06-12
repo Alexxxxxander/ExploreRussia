@@ -16,6 +16,8 @@ namespace ExploreRussia.MVVM.ViewModel
         private string _errorMessage;
         private bool _isViewVisible = true;
         private IUserRepository userRepository;
+        private ILogRepository logRepository;
+        
 
         public string Username
         {
@@ -59,12 +61,15 @@ namespace ExploreRussia.MVVM.ViewModel
         public ICommand LoginCommand { get; }
         public ICommand ShowPasswordCommand { get; }
         public ICommand RememberPasswordCommand { get; }
+        public RelayCommand LogAuthoCommand { get; set; }
 
         //Конструктор
         public LoginViewModel()
         {
             userRepository = new UserRepository();
             LoginCommand = new RelayCommand(ExecuteLoginCommand, CanExecuteLogincommand);
+
+            
         }
 
 
@@ -85,7 +90,12 @@ namespace ExploreRussia.MVVM.ViewModel
             {
                 Thread.CurrentPrincipal = new GenericPrincipal(
                     new GenericIdentity(Username),null);
-                    IsViewVisible = false;
+                logRepository = new LogRepository();
+                LogModel log = new LogModel();
+                log.UserId = userRepository.GetByUsername(Username).Id;
+                log.Time = DateTime.Now;
+                logRepository.Add(log);
+                IsViewVisible = false;
             }
             else
             {
