@@ -19,6 +19,7 @@ namespace ExploreRussia.MVVM.ViewModel
 
         //команды
         public RelayCommand TopViewEditCommand { get; set; }
+        public RelayCommand TopViewAddCommand {  get; set; }
 
 
         public object SelectedItem 
@@ -52,6 +53,12 @@ namespace ExploreRussia.MVVM.ViewModel
                     AddEditWindow addEditWindow = new AddEditWindow((TourModel)SelectedItem);
                     addEditWindow.ShowDialog();
                 }
+            });
+            TopViewAddCommand = new RelayCommand(o =>
+            {
+                AddEditWindow addEditWindow = new AddEditWindow(null);
+                addEditWindow.ShowDialog();
+
             });
             
         }

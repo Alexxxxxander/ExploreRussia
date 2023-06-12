@@ -45,7 +45,9 @@
         <StackPanel Grid.Column="1" 
                     VerticalAlignment="Top">
             <Button Height="40" Width="140"
-                    Margin="10,30,10,10"/>
+                    Margin="10,30,10,10"
+                    Command="{Binding TopViewAddCommand}"
+                    Content="Добавить"/>
             <Button Height="40" Width="140"
                     Margin="10"
                     Command="{Binding TopViewEditCommand}"

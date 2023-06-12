@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Input;
 
 namespace ExploreRussia.MVVM.Repositories
 {
@@ -13,12 +14,75 @@ namespace ExploreRussia.MVVM.Repositories
     {
         public void Add(TourModel tourModel)
         {
-            throw new NotImplementedException();
+            using (var connection = GetConnection())
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "insert into [Tour](Title, DateStart, DateEnd, Cost, Rate, " +
+                    "ImageMain, Route, PeopleMin, PeopleMax, Lenght, DifficultyId, AgeMin, Actual, RegionId, Description)" +
+                    "Values(@title, @dateStart, @dateEnd, @cost, @rate, @imageMain, @route, @peopleMin, @peopleMax, @lenght," +
+                    " @difficultyId, @ageMin, @actual, @regionId, @description)";
+                command.Parameters.Add("@title", System.Data.SqlDbType.NVarChar).Value = tourModel.Title;
+                command.Parameters.Add("@dateStart", System.Data.SqlDbType.Date).Value = tourModel.DateStart;
+                command.Parameters.Add("@dateEnd", System.Data.SqlDbType.Date).Value = tourModel.DateEnd;
+                command.Parameters.Add("@cost", System.Data.SqlDbType.Money).Value = tourModel.Cost;
+                command.Parameters.Add("@rate", System.Data.SqlDbType.Real).Value = tourModel.Rate;
+                command.Parameters.Add("@imageMain", System.Data.SqlDbType.NVarChar).Value = tourModel.ImageMain;
+                command.Parameters.Add("@route", System.Data.SqlDbType.NVarChar).Value = tourModel.Route;
+                command.Parameters.Add("@peopleMin", System.Data.SqlDbType.Int).Value = tourModel.PeopleMin;
+                command.Parameters.Add("@peopleMax", System.Data.SqlDbType.Int).Value = tourModel.PeopleMax;
+                command.Parameters.Add("@lenght", System.Data.SqlDbType.Int).Value = tourModel.Lenght;
+                command.Parameters.Add("@difficultyId", System.Data.SqlDbType.Int).Value = tourModel.DifficultyId;
+                command.Parameters.Add("@ageMin", System.Data.SqlDbType.Int).Value = tourModel.AgeMin;
+                command.Parameters.Add("@actual", System.Data.SqlDbType.Bit).Value = tourModel.Actual;
+                command.Parameters.Add("@regionId", System.Data.SqlDbType.Int).Value = tourModel.RegionId;
+                command.Parameters.Add("@description", System.Data.SqlDbType.NVarChar).Value = tourModel.Description;
+                command.ExecuteNonQuery();
+            }
         }
-
         public void Edit(TourModel tourModel)
         {
-            throw new NotImplementedException();
+            using (var connection = GetConnection())
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "update [Tour]" +
+                    "SET Title = @title, " +
+                    "DateStart = @dateStart, " +
+                    "DateEnd = @dateEnd, " +
+                    "Cost = @cost, " +
+                    "Rate = @rate, " +
+                    "ImageMain = @imageMain, " +
+                    "Route = @route, " +
+                    "PeopleMin = @peopleMin, " +
+                    "PeopleMax = @peopleMax, " +
+                    "Lenght = @lenght, " +
+                    "DifficultyId = @difficultyId, " +
+                    "AgeMin = @ageMin, " +
+                    "Actual = @actual, " +
+                    "RegionId = @regionId, " +
+                    "Description=@description " +
+                    "WHERE Id = @id";
+                command.Parameters.Add("@id", System.Data.SqlDbType.Int).Value = tourModel.Id;
+                command.Parameters.Add("@title", System.Data.SqlDbType.NVarChar).Value = tourModel.Title;
+                command.Parameters.Add("@dateStart", System.Data.SqlDbType.Date).Value = tourModel.DateStart;
+                command.Parameters.Add("@dateEnd", System.Data.SqlDbType.Date).Value = tourModel.DateEnd;
+                command.Parameters.Add("@cost", System.Data.SqlDbType.Money).Value = tourModel.Cost;
+                command.Parameters.Add("@rate", System.Data.SqlDbType.Real).Value = tourModel.Rate;
+                command.Parameters.Add("@imageMain", System.Data.SqlDbType.NVarChar).Value = tourModel.ImageMain;
+                command.Parameters.Add("@route", System.Data.SqlDbType.NVarChar).Value = tourModel.Route;
+                command.Parameters.Add("@peopleMin", System.Data.SqlDbType.Int).Value = tourModel.PeopleMin;
+                command.Parameters.Add("@peopleMax", System.Data.SqlDbType.Int).Value = tourModel.PeopleMax;
+                command.Parameters.Add("@lenght", System.Data.SqlDbType.Int).Value = tourModel.Lenght;
+                command.Parameters.Add("@difficultyId", System.Data.SqlDbType.Int).Value = tourModel.DifficultyId;
+                command.Parameters.Add("@ageMin", System.Data.SqlDbType.Int).Value = tourModel.AgeMin;
+                command.Parameters.Add("@actual", System.Data.SqlDbType.Bit).Value = tourModel.Actual;
+                command.Parameters.Add("@regionId", System.Data.SqlDbType.Int).Value = tourModel.RegionId;
+                command.Parameters.Add("@description", System.Data.SqlDbType.NVarChar).Value = tourModel.Description;
+                command.ExecuteNonQuery();
+            }
         }
 
         public IEnumerable<TourModel> GetAll()

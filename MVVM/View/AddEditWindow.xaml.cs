@@ -26,9 +26,10 @@ namespace ExploreRussia.MVVM.View
         {
 
             InitializeComponent();
-            DataContext = tourModel;
+            _tourModel = tourModel;
+            DataContext = _tourModel;
             DifficultyRepository difficultyRepository = new DifficultyRepository();
-             RegionRepository regionRepository = new RegionRepository();
+            RegionRepository regionRepository = new RegionRepository();
             cmbBoxDifficulty.ItemsSource = difficultyRepository.GetAll().ToList().Select(x => x.Name);
             cmbBoxDifficulty.SelectedIndex = tourModel.DifficultyId - 1;
             cmb_Regions.ItemsSource = regionRepository.GetAll().ToList().Select(x => x.Name);
@@ -44,6 +45,21 @@ namespace ExploreRussia.MVVM.View
             if (e.ChangedButton == MouseButton.Left)
             {
                 this.DragMove();
+            }
+        }
+
+        private void btn_Save_Click(object sender, RoutedEventArgs e)
+        {
+            TourRepository tourRepository = new TourRepository();
+            if ( _tourModel.Id > 0)
+            {
+                tourRepository.Edit(_tourModel);
+                MessageBox.Show("Успешно");
+            }
+            else
+            {
+                tourRepository.Add(_tourModel);
+                MessageBox.Show("Успешно");
             }
         }
     }

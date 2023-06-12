@@ -221,7 +221,8 @@
                     Grid.Column="1"
                     Grid.ColumnSpan="2"
                     HorizontalAlignment="Center"
-                    Content="Сохранить"/>
+                    Content="Сохранить"
+                    Click="btn_Save_Click"/>
         </Grid>
     </Border>
 
