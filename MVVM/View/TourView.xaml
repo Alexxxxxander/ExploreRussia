@@ -27,7 +27,8 @@
                   CanUserAddRows="False"
                   Background="Transparent"                 
                   SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
-                  Panel.ZIndex="1">
+                  Panel.ZIndex="1"
+                  ItemsSource="{Binding ItemsSource}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Заголовок" Binding="{Binding Title}"/>
                 <DataGridTextColumn Header="Описание" Binding="{Binding Description}"/>
@@ -63,12 +64,6 @@
                     Command="{Binding DeleteTourCommand}"
                     Content="Удалить"
                     Style="{StaticResource ButtonStyleRound}"/>
-            <Button Height="40" Width="140"
-                    Margin="10"
-                    Content="Обновить"
-                    Style="{StaticResource ButtonStyleRound}"
-                    x:Name="btn_Refresh"
-                    Click="btn_Refresh_Click"/>
 
         </StackPanel>
     </Grid>

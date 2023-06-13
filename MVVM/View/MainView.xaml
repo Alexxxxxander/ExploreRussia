@@ -21,7 +21,7 @@
     <Window.DataContext>
         <viewModel:MainViewModel/>
     </Window.DataContext>
-    <Border Background="{StaticResource ColorBackground}" CornerRadius="20">
+    <Border Background="{StaticResource ColorBackground}" BorderThickness="1" BorderBrush="Black" CornerRadius="20">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="30"/>

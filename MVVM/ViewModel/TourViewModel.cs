@@ -4,6 +4,7 @@ using ExploreRussia.MVVM.Repositories;
 using ExploreRussia.MVVM.View;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Net.Http.Headers;
 using System.Runtime.Serialization;
 using System.Windows;
@@ -18,6 +19,7 @@ namespace ExploreRussia.MVVM.ViewModel
         //поля
         private TourModel _selectedItem;
         private object _topView;
+        private IEnumerable<TourModel> itemsSource;
 
         //команды
         public RelayCommand TopViewEditCommand { get; set; }
@@ -27,7 +29,7 @@ namespace ExploreRussia.MVVM.ViewModel
 
         public object SelectedItem 
         { 
-            get => _selectedItem; 
+            get { return _selectedItem; }
             set
             {
                 _selectedItem = (TourModel)value;
@@ -45,16 +47,28 @@ namespace ExploreRussia.MVVM.ViewModel
             }
         }
 
+        public object ItemsSource
+        {
+            get { return itemsSource; }
+            set
+            {
+                itemsSource = (IEnumerable<TourModel>)value;
+                OnPropertyChanged();
+            }
+        }
+
 
         public TourViewModel()
         {
-
+            TourRepository tours = new TourRepository();
+            ItemsSource = tours.GetAll();
             TopViewEditCommand = new RelayCommand(o => 
             { 
                 if (SelectedItem != null)
                 {
                     AddEditWindow addEditWindow = new AddEditWindow((TourModel)SelectedItem);
                     addEditWindow.ShowDialog();
+                    ItemsSource = tours.GetAll();
                 }
             });
             TopViewAddCommand = new RelayCommand(o =>
@@ -62,6 +76,7 @@ namespace ExploreRussia.MVVM.ViewModel
                 TourModel tourModel = new TourModel();
                 AddEditWindow addEditWindow = new AddEditWindow(tourModel);
                 addEditWindow.ShowDialog();
+                ItemsSource = tours.GetAll();
 
             });
             DeleteTourCommand = new RelayCommand(o =>
@@ -70,6 +85,7 @@ namespace ExploreRussia.MVVM.ViewModel
                 {
                     TourRepository tourRepository = new TourRepository();
                     tourRepository.Remove((TourModel)SelectedItem); 
+                    ItemsSource = tours.GetAll();
                 }
             });
             

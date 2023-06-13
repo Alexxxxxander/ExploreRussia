@@ -23,10 +23,10 @@
     <Window.Visibility>
         <Binding Path="IsViewVisible" Mode="TwoWay" Converter="{StaticResource BooleanToVisibility}"/>
     </Window.Visibility>
-    <Border Background="{StaticResource ColorBackground}" CornerRadius="20">
+    <Border Background="{StaticResource ColorBackground}" BorderBrush="Black" BorderThickness="1" CornerRadius="20">
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="20"/>
+                <RowDefinition Height="30"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>

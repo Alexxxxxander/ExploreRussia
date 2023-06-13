@@ -12,14 +12,6 @@ namespace ExploreRussia.MVVM.View
         public TourView()
         {
             InitializeComponent();
-            TourRepository tourRepository = new TourRepository();
-            dGrid.ItemsSource = tourRepository.GetAll();
-        }
-
-        private void btn_Refresh_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-            TourRepository tourRepository = new TourRepository();
-            dGrid.ItemsSource = tourRepository.GetAll();
         }
     }
 }

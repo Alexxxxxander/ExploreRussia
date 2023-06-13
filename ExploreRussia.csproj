@@ -133,7 +133,9 @@
     <Compile Include="Core\ObservableObject.cs" />
     <Compile Include="Core\RelayCommand.cs" />
     <Compile Include="MVVM\Converters\ComboBoxPopupWidthConverter.cs" />
+    <Compile Include="MVVM\Model\ApplicationModel.cs" />
     <Compile Include="MVVM\Model\DifficultyModel.cs" />
+    <Compile Include="MVVM\Model\IApplicationRepository.cs" />
     <Compile Include="MVVM\Model\IDifficultyRepository.cs" />
     <Compile Include="MVVM\Model\ILogRepository.cs" />
     <Compile Include="MVVM\Model\IRegionRepository.cs" />
@@ -144,6 +146,7 @@
     <Compile Include="MVVM\Model\TourModel.cs" />
     <Compile Include="MVVM\Model\UserAccountModel.cs" />
     <Compile Include="MVVM\Model\UserModel.cs" />
+    <Compile Include="MVVM\Repositories\ApplicationRepository.cs" />
     <Compile Include="MVVM\Repositories\DifficultyRepository.cs" />
     <Compile Include="MVVM\Repositories\LogRepository.cs" />
     <Compile Include="MVVM\Repositories\RegionRepository.cs" />

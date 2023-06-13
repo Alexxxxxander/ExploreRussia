@@ -11,6 +11,6 @@
         <viewModel:HomeViewViewModel/>
     </UserControl.DataContext>
     <Grid>
-        <Label Content="Главная"/>
+        <Label Content="{Binding ApplicationCount, StringFormat='Заявок за вчера {0}}' }"/>
     </Grid>
 </UserControl>
