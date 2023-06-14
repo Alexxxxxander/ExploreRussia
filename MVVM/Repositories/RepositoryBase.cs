@@ -12,7 +12,7 @@ namespace ExploreRussia.MVVM.Repositories
         private readonly string _connectionString;
         public RepositoryBase() 
         {
-            _connectionString = "Server=DESKTOP-LN6MAO0\\SQLEXPRESS; Database=ExploreRussiaDB; Integrated Security = true";
+            _connectionString = "Server=TUMBA; Database=ExploreRussiaDB; Integrated Security = true";
         }
         protected SqlConnection GetConnection()
         {

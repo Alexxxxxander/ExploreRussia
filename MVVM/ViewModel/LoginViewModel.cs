@@ -67,9 +67,7 @@ namespace ExploreRussia.MVVM.ViewModel
         public LoginViewModel()
         {
             userRepository = new UserRepository();
-            LoginCommand = new RelayCommand(ExecuteLoginCommand, CanExecuteLogincommand);
-
-            
+            LoginCommand = new RelayCommand(ExecuteLoginCommand, CanExecuteLogincommand);          
         }
 
 

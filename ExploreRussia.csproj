@@ -102,11 +102,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UI\res\Theme\ButtonTopAppTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UI\res\Theme\Colors.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UI\res\Theme\ComboBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\res\Theme\DataGridTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -134,6 +142,8 @@
     <Compile Include="Core\RelayCommand.cs" />
     <Compile Include="MVVM\Converters\ComboBoxPopupWidthConverter.cs" />
     <Compile Include="MVVM\Model\ApplicationModel.cs" />
+    <Compile Include="MVVM\Model\BarChart.cs" />
+    <Compile Include="MVVM\Model\Chart.cs" />
     <Compile Include="MVVM\Model\DifficultyModel.cs" />
     <Compile Include="MVVM\Model\IApplicationRepository.cs" />
     <Compile Include="MVVM\Model\IDifficultyRepository.cs" />

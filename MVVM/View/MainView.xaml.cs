@@ -45,8 +45,15 @@ namespace ExploreRussia
         private void btnMaximize_Click(object sender, RoutedEventArgs e)
         {
             if (this.WindowState == WindowState.Normal)
+            {
                 this.WindowState = WindowState.Maximized;
-            else this.WindowState = WindowState.Normal;
+                mainViewBorder.CornerRadius = new CornerRadius(0, 0, 0, 0);
+            }
+            else
+            {
+                mainViewBorder.CornerRadius = new CornerRadius(20, 20, 20, 20);
+                this.WindowState = WindowState.Normal;
+            }
         }
 
         private void pnlConrolBar_MouseEnter(object sender, MouseEventArgs e)

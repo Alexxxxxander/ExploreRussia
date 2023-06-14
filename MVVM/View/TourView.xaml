@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:ExploreRussia.MVVM.View"
              xmlns:viewModel="clr-namespace:ExploreRussia.MVVM.ViewModel"
              mc:Ignorable="d" 
+             FontFamily="/UI/res/Fonts/#Inter"
              d:DesignHeight="450" d:DesignWidth="800" Background="Transparent">
     <UserControl.DataContext>
         <viewModel:TourViewModel/>
@@ -18,13 +19,14 @@
        
 
 
-        <DataGrid x:Name="dGrid"
+        <DataGrid ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle}" x:Name="dGrid"
                   SelectionMode="Single"
                   AutoGenerateColumns="False"
                   CanUserResizeColumns="True"
                   CanUserSortColumns="False"
                   CanUserDeleteRows="False"
                   CanUserAddRows="False"
+                  BorderThickness="0"
                   Background="Transparent"                 
                   SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
                   Panel.ZIndex="1"

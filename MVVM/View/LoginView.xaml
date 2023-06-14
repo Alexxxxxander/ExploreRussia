@@ -32,6 +32,24 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
+                        <StackPanel
+                Panel.ZIndex="100"
+                        Grid.ColumnSpan="2"
+                        VerticalAlignment="Top"                     
+                        Margin="0,0,0,0"                       
+                        x:Name="pnlControlBar" 
+                        MouseEnter="pnlConrolBar_MouseEnter"
+                        Orientation="Horizontal" 
+                        FlowDirection="RightToLeft"
+                        MouseLeftButtonDown="pnlControlBar_MouseLeftButtonDown">
+                <Button Style="{DynamicResource ButtonStyleTopApp}" Height="20" 
+                        Width="20" 
+                        x:Name="btn_Close"
+                        Grid.Column="1" 
+                        HorizontalAlignment="Right"
+                        Click="btn_Close_Click"
+                        Margin="20,10,20,0"/>
+            </StackPanel>
             <StackPanel Orientation="Vertical"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"

@@ -12,7 +12,7 @@ namespace ExploreRussia.MVVM.Repositories
     {
         public IEnumerable<ApplicationModel> GetAll()
         {
-            IEnumerable<ApplicationModel> appls = null;
+            IEnumerable<ApplicationModel> appls = new List<ApplicationModel>();
             using (var connection = GetConnection())
             using (var command = new SqlCommand())
             {
@@ -34,7 +34,7 @@ namespace ExploreRussia.MVVM.Repositories
                             Email =reader[6].ToString(),
                             DateCreated = DateTime.Parse(reader[7].ToString()),
                         };
-                        appls = appls.Append<ApplicationModel>(appl);
+                        appls = appls.Append(appl);
                     }
                 }
             }

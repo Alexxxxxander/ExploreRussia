@@ -6,11 +6,15 @@
              xmlns:local="clr-namespace:ExploreRussia.MVVM.View"
              xmlns:viewModel="clr-namespace:ExploreRussia.MVVM.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+             FontFamily="/UI/res/Fonts/#Inter">
     <UserControl.DataContext>
         <viewModel:HomeViewViewModel/>
     </UserControl.DataContext>
     <Grid>
-        <Label Content="{Binding ApplicationCount, StringFormat='Заявок за вчера {0}}' }"/>
+        <Label FontSize="20" Foreground="Black" Content="{Binding ApplicationCount}" ContentStringFormat="Заявок за вчера {0}"/>
+        <Grid x:Name="GridForChart" Margin="0,50,0,0">
+            
+        </Grid>
     </Grid>
 </UserControl>
