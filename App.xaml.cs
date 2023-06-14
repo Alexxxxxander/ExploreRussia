@@ -1,5 +1,5 @@
-﻿using System.Windows;
-using ExploreRussia.MVVM.View;
+﻿using ExploreRussia.MVVM.View;
+using System.Windows;
 
 namespace ExploreRussia
 {

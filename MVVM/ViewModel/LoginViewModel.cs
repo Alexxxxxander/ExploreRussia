@@ -1,23 +1,22 @@
 ﻿using ExploreRussia.Core;
 using ExploreRussia.MVVM.Model;
-using System;
-using System.Windows.Input;
 using ExploreRussia.MVVM.Repositories;
+using System;
 using System.Security.Principal;
 using System.Threading;
-using System.Diagnostics.Eventing.Reader;
+using System.Windows.Input;
 
 namespace ExploreRussia.MVVM.ViewModel
 {
     internal class LoginViewModel : ObservableObject
     {
-        private string _username = "admin";
+        private string _username;
         private string _password;
         private string _errorMessage;
         private bool _isViewVisible = true;
         private IUserRepository userRepository;
         private ILogRepository logRepository;
-        
+
 
         public string Username
         {
@@ -67,7 +66,7 @@ namespace ExploreRussia.MVVM.ViewModel
         public LoginViewModel()
         {
             userRepository = new UserRepository();
-            LoginCommand = new RelayCommand(ExecuteLoginCommand, CanExecuteLogincommand);          
+            LoginCommand = new RelayCommand(ExecuteLoginCommand, CanExecuteLogincommand);
         }
 
 
@@ -87,7 +86,7 @@ namespace ExploreRussia.MVVM.ViewModel
             if (isValidUser)
             {
                 Thread.CurrentPrincipal = new GenericPrincipal(
-                    new GenericIdentity(Username),null);
+                    new GenericIdentity(Username), null);
                 logRepository = new LogRepository();
                 LogModel log = new LogModel();
                 log.UserId = userRepository.GetByUsername(Username).Id;

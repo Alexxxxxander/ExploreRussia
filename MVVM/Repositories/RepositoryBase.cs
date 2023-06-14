@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
 
 namespace ExploreRussia.MVVM.Repositories
 {
     public class RepositoryBase
     {
         private readonly string _connectionString;
-        public RepositoryBase() 
+        public RepositoryBase()
         {
             _connectionString = "Server=TUMBA; Database=ExploreRussiaDB; Integrated Security = true";
         }

@@ -13,7 +13,7 @@
         Background="Transparent"
         FontFamily="/UI/res/Fonts/#Inter">
     <Window.DataContext>
-        <viewModel:LoginViewModel Username="admin"/>
+        <viewModel:LoginViewModel Username="admin" Password="admin"/>
     </Window.DataContext>
 
     <Window.Resources>
@@ -32,7 +32,10 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-                        <StackPanel
+            <Label Content="Исследуй Россию"
+                   Margin="20,0,0,0"
+                   FontSize="16"/>
+            <StackPanel
                 Panel.ZIndex="100"
                         Grid.ColumnSpan="2"
                         VerticalAlignment="Top"                     
@@ -42,6 +45,7 @@
                         Orientation="Horizontal" 
                         FlowDirection="RightToLeft"
                         MouseLeftButtonDown="pnlControlBar_MouseLeftButtonDown">
+
                 <Button Style="{DynamicResource ButtonStyleTopApp}" Height="20" 
                         Width="20" 
                         x:Name="btn_Close"

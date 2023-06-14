@@ -11,11 +11,13 @@ namespace ExploreRussia.MVVM.ViewModel
         public RelayCommand TourViewCommand { get; set; }
         public RelayCommand DiscoveryViewCommand { get; set; }
         public RelayCommand HomeViewCommand { get; set; }
+        public RelayCommand UserViewCommand { get; set; }
 
         //ViewModels
         public TourViewModel TourVM { get; set; }
         public DiscoveryViewModel DiscoveryVM { get; set; }
         public HomeViewViewModel HomeVM { get; set; }
+        public UserViewModel UserVM { get; set; }
 
         //поля
         private UserAccountModel _currentUserAccount;
@@ -55,6 +57,7 @@ namespace ExploreRussia.MVVM.ViewModel
             TourVM = new TourViewModel();
             DiscoveryVM = new DiscoveryViewModel();
             HomeVM = new HomeViewViewModel();
+            UserVM = new UserViewModel();
 
             CurrentView = TourVM;
 
@@ -71,6 +74,11 @@ namespace ExploreRussia.MVVM.ViewModel
             {
                 CurrentView = HomeVM;
             });
+
+            UserViewCommand = new RelayCommand(o =>
+            {
+                CurrentView = UserVM;
+            });
         }
         private void LoadCurrentUserData()
         {
@@ -78,7 +86,7 @@ namespace ExploreRussia.MVVM.ViewModel
             if (user != null)
             {
                 CurrentUserAccount.Username = user.Username;
-                CurrentUserAccount.DisplayName = $"Здравствуйте {user.Name} {user.LastName}";
+                CurrentUserAccount.DisplayName = $"{user.Name} {user.LastName}";
                 CurrentUserAccount.ProfilePicture = null;
             }
             else

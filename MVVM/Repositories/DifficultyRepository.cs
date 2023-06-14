@@ -3,8 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ExploreRussia.MVVM.Repositories
 {
@@ -31,7 +29,7 @@ namespace ExploreRussia.MVVM.Repositories
                 command.CommandText = "select * from [Difficulty]";
                 using (var reader = command.ExecuteReader())
                 {
-                    while(reader.Read())
+                    while (reader.Read())
                     {
                         DifficultyModel DifficultyModel = new DifficultyModel()
                         {

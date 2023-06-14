@@ -1,5 +1,4 @@
 ﻿using System.Windows.Controls;
-using ExploreRussia.MVVM.Repositories;
 
 namespace ExploreRussia.MVVM.View
 {

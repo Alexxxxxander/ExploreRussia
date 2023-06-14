@@ -1,18 +1,8 @@
 ﻿using ExploreRussia.MVVM.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using ExploreRussia.MVVM.Repositories;
+using System.Linq;
+using System.Windows;
+using System.Windows.Input;
 
 namespace ExploreRussia.MVVM.View
 {
@@ -22,7 +12,7 @@ namespace ExploreRussia.MVVM.View
     public partial class AddEditWindow : Window
     {
         public TourModel _tourModel;
-      
+
         public AddEditWindow(TourModel tourModel)
         {
 
@@ -61,8 +51,8 @@ namespace ExploreRussia.MVVM.View
         private void btn_Save_Click(object sender, RoutedEventArgs e)
         {
             TourRepository tourRepository = new TourRepository();
-            if ( _tourModel.Id > 0)
-            {              
+            if (_tourModel.Id > 0)
+            {
                 tourRepository.Edit(_tourModel);
                 MessageBox.Show("Успешно");
                 this.Close();

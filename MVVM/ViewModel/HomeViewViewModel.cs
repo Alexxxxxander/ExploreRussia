@@ -1,13 +1,8 @@
 ﻿using ExploreRussia.Core;
 using ExploreRussia.MVVM.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using LiveCharts;
 using LiveCharts.Wpf;
-using System.Runtime.InteropServices;
+using System;
 using System.Windows.Media;
 
 namespace ExploreRussia.MVVM.ViewModel
@@ -73,9 +68,9 @@ namespace ExploreRussia.MVVM.ViewModel
             };
 
 
-            Labels = new[] 
+            Labels = new[]
             {
-                               
+
                 DateTime.Now.Date.AddDays(-6).ToShortDateString().ToString(),
                 DateTime.Now.Date.AddDays(-5).ToShortDateString().ToString(),
                 DateTime.Now.Date.AddDays(-4).ToShortDateString().ToString(),
@@ -92,6 +87,6 @@ namespace ExploreRussia.MVVM.ViewModel
         }
 
 
-          
+
     }
 }

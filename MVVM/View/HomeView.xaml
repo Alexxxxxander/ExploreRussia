@@ -16,7 +16,7 @@
     <Grid>
         <Label FontSize="20" Foreground="Black" Content="{Binding ApplicationCount}" ContentStringFormat="Заявок за вчера - {0}"/>
         <Label FontSize="20" Foreground="Black" Content="График заявок за неделю" Margin="0,50,0,0"/>
-        <Grid x:Name="GridForChart" Margin="0,100,0,0" MinHeight="200" MinWidth="500">
+        <Grid x:Name="GridForChart" Margin="10,100,10,0" MinHeight="200" MinWidth="500">
             <lvc:CartesianChart Style="{DynamicResource CartesianChartStyle}" Foreground="Black">
                 <lvc:CartesianChart.Series>
                   

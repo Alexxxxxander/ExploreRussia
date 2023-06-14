@@ -4,8 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ExploreRussia.MVVM.Repositories
 {
@@ -64,7 +62,7 @@ namespace ExploreRussia.MVVM.Repositories
                 {
                     while (reader.Read())
                     {
-                        result ++;
+                        result++;
                     }
                 }
             }
@@ -74,8 +72,8 @@ namespace ExploreRussia.MVVM.Repositories
         public ChartValues<double> GetCountLastWeek()
         {
             ChartValues<double> result = new ChartValues<double>();
-            DateTime cc = DateTime.Now.AddDays(-7);
-            for (int i = 0; i<=6; i++)
+            DateTime cc = DateTime.Now.Date.AddDays(-6);
+            for (int i = 0; i <= 6; i++)
             {
                 result.Add(GetCountDay(cc));
                 cc = cc.AddDays(1);

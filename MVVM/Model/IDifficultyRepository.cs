@@ -1,13 +1,8 @@
-﻿using ExploreRussia.MVVM.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace ExploreRussia.MVVM.Model
 {
-    public interface IDifficultyRepository 
+    public interface IDifficultyRepository
     {
         void Add(DifficultyModel difficultyModel);
         void Edit(DifficultyModel difficultyModel);

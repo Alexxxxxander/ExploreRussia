@@ -1,10 +1,7 @@
 ﻿using ExploreRussia.MVVM.Model;
-using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ExploreRussia.MVVM.Repositories
 {
@@ -40,9 +37,9 @@ namespace ExploreRussia.MVVM.Repositories
                     {
                         LogModel log = new LogModel()
                         {
-                           Id = reader.GetInt32(0),
-                           UserId = reader.GetInt32(1),
-                           Time = reader.GetDateTime(2),
+                            Id = reader.GetInt32(0),
+                            UserId = reader.GetInt32(1),
+                            Time = reader.GetDateTime(2),
                         };
                         logs = logs.Append<LogModel>(log);
                     }

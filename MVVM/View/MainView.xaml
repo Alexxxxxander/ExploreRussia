@@ -32,7 +32,16 @@
                 <ColumnDefinition Width="200"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Border Background="#F21D55" Grid.RowSpan="3" CornerRadius="20,0,0,20"/>
+            <Border Background="#F21D55" Grid.RowSpan="3" CornerRadius="19.5,0,0,19.5"/>
+            <Border Grid.RowSpan="3" CornerRadius="19.5,0,0,19.5" Panel.ZIndex="101" Focusable="False" IsHitTestVisible="False">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                        <GradientStop Color="#00FFFFFF" Offset="0.90"/>
+                        <GradientStop Color="#00FFFF00" Offset="0.95"/>
+                        <GradientStop Color="#66000000" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
             <Label Content="Исследуй Россию"
                    Margin="20,0,0,0"
                    FontSize="16"/>
@@ -59,12 +68,17 @@
                              Height="50" Foreground="Black"
                              FontSize="26"
                              Command="{Binding DiscoveryViewCommand}"/>
+                <RadioButton Content="Пользователь"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Height="50" Foreground="Black"
+                             FontSize="26"
+                             Command="{Binding UserViewCommand}"/>
 
             </StackPanel>
             <ContentControl Grid.Column="1"
                             Grid.Row="1"
                             Grid.RowSpan="2"
-                            Margin="10"
+                            Margin="0"
                             Content="{Binding CurrentView}"
                             Background="Transparent"/>
             <StackPanel

@@ -3,10 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Input;
 
 namespace ExploreRussia.MVVM.Repositories
 {
@@ -88,9 +85,10 @@ namespace ExploreRussia.MVVM.Repositories
         public IEnumerable<TourModel> GetAll()
         {
             IEnumerable<TourModel> tours = new List<TourModel>();
-            if(GetCount() > 0)
+            if (GetCount() > 0)
             {
-                try{
+                try
+                {
                     using (var connection = GetConnection())
                     using (var command = new SqlCommand())
                     {
@@ -137,20 +135,20 @@ namespace ExploreRussia.MVVM.Repositories
             TourModel result = null;
             try
             {
-                using(var connection = GetConnection())
+                using (var connection = GetConnection())
                 using (var command = new SqlCommand())
                 {
                     connection.Open();
                     command.Connection = connection;
                     command.CommandText = "select * from [Tour] where Id=@id";
-                    command.Parameters.Add("@id",System.Data.SqlDbType.Int).Value = id;
+                    command.Parameters.Add("@id", System.Data.SqlDbType.Int).Value = id;
                     using (var reader = command.ExecuteReader())
                     {
                         if (reader.Read())
                         {
                             result = new TourModel()
                             {
-                                Id = Convert.ToInt32( reader[0]),
+                                Id = Convert.ToInt32(reader[0]),
                                 Title = reader[1].ToString(),
                                 DateStart = Convert.ToDateTime(reader[2]),
                                 DateEnd = Convert.ToDateTime(reader[3]),
@@ -164,7 +162,7 @@ namespace ExploreRussia.MVVM.Repositories
                                 AgeMin = Convert.ToInt32(reader[11]),
                                 Actual = Convert.ToBoolean(reader[12]),
                                 RegionId = Convert.ToInt32(reader[13]),
-                                Description = reader[14].ToString(),    
+                                Description = reader[14].ToString(),
                             };
                         }
                     }
