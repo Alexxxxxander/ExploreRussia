@@ -1,8 +1,10 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:colors="clr-namespace:ExploreRussia">
     <SolidColorBrush x:Key="ColorAccent" Color="#F2E205"/>
-    <SolidColorBrush x:Key="ColorAdditional" Color="#F29F05"/>
+    <SolidColorBrush x:Key="ColorAdditional" Color="#A69C14"/>
     <SolidColorBrush x:Key="ColorBackground" Color="#FFFF"/>
+    
     <SolidColorBrush x:Key="TextBox.Static.Border" Color="#FFABAdB3"/>
     <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FF7EB4EA"/>
     <SolidColorBrush x:Key="TextBox.Focus.Border" Color="#FF569DE5"/>
@@ -40,9 +42,9 @@
     </Style>
     <SolidColorBrush x:Key="Button.Static.Background" Color="#F2E205"/>
     <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
-    <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+    <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#fff347"/>
     <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
-    <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+    <SolidColorBrush x:Key="Button.Pressed.Background" Color="#A69C14"/>
     <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
     <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
     <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>

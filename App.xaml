@@ -18,6 +18,7 @@
                 <ResourceDictionary Source="\UI\res\Theme\DatePickerDict.xaml"/>
                 <ResourceDictionary Source="\UI\res\Theme\DataGridTheme.xaml"/>
                 <ResourceDictionary Source="\UI\res\Theme\ButtonTopAppTheme.xaml"/>
+                <ResourceDictionary Source="\UI\res\Theme\BaseChartTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             <DataTemplate DataType="{x:Type viewModel:TourViewModel}">
                 <view:TourView/>

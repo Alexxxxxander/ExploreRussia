@@ -16,7 +16,15 @@
             <ColumnDefinition/>
             <ColumnDefinition Width="160"/>
         </Grid.ColumnDefinitions>
-       
+        <TextBox Width="250"
+                 Height="40"
+                 HorizontalContentAlignment="Center"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Margin="5"
+                 Grid.Column="0"
+                 Grid.Row="1"
+                 Style="{StaticResource ModernTextBox}"/>
 
 
         <DataGrid ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle}" x:Name="dGrid"
@@ -27,6 +35,7 @@
                   CanUserDeleteRows="False"
                   CanUserAddRows="False"
                   BorderThickness="0"
+                  Margin="0,60,0,0"
                   Background="Transparent"                 
                   SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
                   Panel.ZIndex="1"

@@ -4,6 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ExploreRussia.MVVM.View"
+             xmlns:colors="clr-namespace:ExploreRussia"
+             xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
              xmlns:viewModel="clr-namespace:ExploreRussia.MVVM.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
@@ -12,9 +14,29 @@
         <viewModel:HomeViewViewModel/>
     </UserControl.DataContext>
     <Grid>
-        <Label FontSize="20" Foreground="Black" Content="{Binding ApplicationCount}" ContentStringFormat="Заявок за вчера {0}"/>
-        <Grid x:Name="GridForChart" Margin="0,50,0,0">
-            
+        <Label FontSize="20" Foreground="Black" Content="{Binding ApplicationCount}" ContentStringFormat="Заявок за вчера - {0}"/>
+        <Label FontSize="20" Foreground="Black" Content="График заявок за неделю" Margin="0,50,0,0"/>
+        <Grid x:Name="GridForChart" Margin="0,100,0,0" MinHeight="200" MinWidth="500">
+            <lvc:CartesianChart Style="{DynamicResource CartesianChartStyle}" Foreground="Black">
+                <lvc:CartesianChart.Series>
+                  
+                    <Binding Path="SeriesCollectionData"/>
+                </lvc:CartesianChart.Series>
+                <lvc:CartesianChart.AxisX>
+                    <lvc:Axis Labels="{Binding Labels}" Foreground="Black" >
+                        <lvc:Axis.Separator>
+                            <lvc:Separator Step="1" IsEnabled="False"/>
+                        </lvc:Axis.Separator>
+                    </lvc:Axis>
+                </lvc:CartesianChart.AxisX>
+                <lvc:CartesianChart.AxisY>
+                    <lvc:Axis Foreground="Black">
+                        <lvc:Axis.Separator>
+                            <lvc:Separator Step="1"/>
+                        </lvc:Axis.Separator>
+                    </lvc:Axis>
+                </lvc:CartesianChart.AxisY>
+            </lvc:CartesianChart>
         </Grid>
     </Grid>
 </UserControl>

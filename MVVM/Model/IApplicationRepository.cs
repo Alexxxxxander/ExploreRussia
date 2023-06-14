@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LiveCharts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,5 +11,7 @@ namespace ExploreRussia.MVVM.Model
     {
         IEnumerable<ApplicationModel> GetAll();
         int GetCount();
+        ChartValues<double> GetCountLastWeek();
+        int GetCountDay(DateTime date);
     }
 }
