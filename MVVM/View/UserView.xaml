@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ExploreRussia.MVVM.View"
              mc:Ignorable="d" 
+             x:Name="UserControl"
              d:DesignHeight="450" d:DesignWidth="800"
              xmlns:viewModel ="clr-namespace:ExploreRussia.MVVM.ViewModel"
              FontFamily="/UI/res/Fonts/#Inter">
@@ -25,7 +26,9 @@
                 Width="200"
                 Style="{StaticResource ButtonStyleRound}"
                 Content="Выйти"
-                Margin="0,20,0,0"/>
+                Margin="0,20,0,0"
+                    Command="{Binding CloseWindow}"
+                    CommandParameter="{Binding ElementName=UserControl}"/>
         </StackPanel>
 
     </Grid>

@@ -1,7 +1,9 @@
 ﻿using ExploreRussia.Core;
 using ExploreRussia.MVVM.Model;
 using ExploreRussia.MVVM.Repositories;
+using System;
 using System.Threading;
+using System.Windows;
 
 namespace ExploreRussia.MVVM.ViewModel
 {
@@ -80,6 +82,8 @@ namespace ExploreRussia.MVVM.ViewModel
                 CurrentView = UserVM;
             });
         }
+
+
         private void LoadCurrentUserData()
         {
             var user = userRepository.GetByUsername(Thread.CurrentPrincipal.Identity.Name);

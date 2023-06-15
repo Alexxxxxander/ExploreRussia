@@ -1,8 +1,11 @@
 ﻿using ExploreRussia.Core;
 using ExploreRussia.MVVM.Model;
 using ExploreRussia.MVVM.Repositories;
+using ExploreRussia.MVVM.View;
 using System;
 using System.Threading;
+using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace ExploreRussia.MVVM.ViewModel
@@ -10,8 +13,9 @@ namespace ExploreRussia.MVVM.ViewModel
     internal class UserViewModel : ObservableObject
     {
         private IUserRepository userRepository;
-        public event EventHandler ConfirmEvent;
         private UserAccountModel _currentUserAccount;
+        
+        public RelayCommand CloseWindow { get; set; }
 
         public UserAccountModel CurrentUserAccount
         {
@@ -27,35 +31,31 @@ namespace ExploreRussia.MVVM.ViewModel
             }
         }
 
-        private ICommand confirmCommand;
-
-        public ICommand ConfirmCommand
-        {
-            get
-            {
-                if (confirmCommand == null)
-                {
-                    confirmCommand = new RelayCommand(p => FireConfirmEvent(), p => ConfirmEventPredicate());
-                }
-                return confirmCommand;
-            }
-        }
-
-        private bool ConfirmEventPredicate()
-        {
-            throw new NotImplementedException();
-        }
-
-        private void FireConfirmEvent()
-        {
-            throw new NotImplementedException();
-        }
 
         public UserViewModel()
         {
             userRepository = new UserRepository();
             CurrentUserAccount = new UserAccountModel();
             LoadCurrentUserData();
+            CloseWindow = new RelayCommand(o =>
+            {
+                UserControl window = (UserControl)o;
+
+                LoginView loginView = new LoginView();
+                loginView.Show();
+                loginView.IsVisibleChanged += (s, ev) =>
+                {
+                    if (loginView.IsVisible == false && loginView.IsLoaded)
+                    {
+                        var mainView = new MainView();
+                        mainView.Show();
+                        loginView.Close();
+                    }
+                };
+                loginView.txtBoxUser.Text = Thread.CurrentPrincipal.Identity.Name;
+                var myWindow = Window.GetWindow(window);
+                myWindow.Close();
+            });
         }
 
         private void LoadCurrentUserData()

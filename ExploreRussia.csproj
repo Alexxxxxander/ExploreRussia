@@ -47,6 +47,9 @@
     <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
       <HintPath>packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationFramework.Aero2" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -54,6 +57,9 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -177,6 +183,7 @@
     <Compile Include="MVVM\Repositories\UserRepository.cs" />
     <Compile Include="MVVM\ViewModel\DiscoveryViewModel.cs" />
     <Compile Include="MVVM\ViewModel\HomeViewViewModel.cs" />
+    <Compile Include="Core\RelayCommandT.cs" />
     <Compile Include="MVVM\ViewModel\TourViewModel.cs" />
     <Compile Include="MVVM\ViewModel\LoginViewModel.cs" />
     <Compile Include="MVVM\ViewModel\MainViewModel.cs" />

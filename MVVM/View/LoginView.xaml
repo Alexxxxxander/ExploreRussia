@@ -13,7 +13,7 @@
         Background="Transparent"
         FontFamily="/UI/res/Fonts/#Inter">
     <Window.DataContext>
-        <viewModel:LoginViewModel Username="admin" Password="admin"/>
+        <viewModel:LoginViewModel/>
     </Window.DataContext>
 
     <Window.Resources>
@@ -61,6 +61,7 @@
                 <TextBox Style="{DynamicResource TextBoxStyleRound}" Height="40"
                          Width="200"
                          Margin="10"
+                         x:Name="txtBoxUser"
                          Foreground="Black"
                          Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"/>
                 <customcontrols:BindablePasswordBox Password="{Binding Password,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">

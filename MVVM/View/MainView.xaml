@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:ExploreRussia"
         xmlns:viewModel="clr-namespace:ExploreRussia.MVVM.ViewModel"
         xmlns:view="clr-namespace:ExploreRussia.MVVM.View"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"       
         mc:Ignorable="d"
         Title="MainWindow" 
         Height="450"
@@ -17,7 +18,14 @@
         ResizeMode="CanResizeWithGrip"
         FontFamily="/UI/res/Fonts/#Inter"
         WindowStartupLocation="CenterScreen"
-        MinHeight="200" MinWidth="400">
+        MinHeight="200" MinWidth="400"
+        x:Name="MainWindow">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Close">
+            <i:InvokeCommandAction Command="{Binding CloseViewCommand}" 
+                                   CommandParameter="{Binding ElementName=MainWindow}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
     <Window.DataContext>
         <viewModel:MainViewModel/>
     </Window.DataContext>
