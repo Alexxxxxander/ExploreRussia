@@ -83,6 +83,11 @@
                     Command="{Binding DeleteTourCommand}"
                     Content="Удалить"
                     Style="{StaticResource ButtonStyleRound}"/>
+            <Button Height="40" Width="140"
+                    Margin="10"
+                    Command="{Binding DeleteTourCommand}"
+                    Content="Экспорт"
+                    Style="{StaticResource ButtonStyleRound}"/>
 
         </StackPanel>
     </Grid>

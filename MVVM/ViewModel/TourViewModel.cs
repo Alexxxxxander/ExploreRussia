@@ -8,6 +8,8 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using Excel = Microsoft.Office.Interop.Excel;
+using Microsoft.Office.Interop.Excel;
 
 namespace ExploreRussia.MVVM.ViewModel
 {
@@ -25,6 +27,7 @@ namespace ExploreRussia.MVVM.ViewModel
         public RelayCommand TopViewEditCommand { get; set; }
         public RelayCommand TopViewAddCommand { get; set; }
         public RelayCommand DeleteTourCommand { get; set; }
+        public RelayCommand ExportTourCommand { get; set; }
 
 
         public object SelectedItem
