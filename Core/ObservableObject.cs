@@ -4,6 +4,9 @@ using System.Runtime.CompilerServices;
 
 namespace ExploreRussia.Core
 {
+    /// <summary>
+    /// Базовый класс объекта
+    /// </summary>
     internal class ObservableObject : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;

@@ -5,6 +5,9 @@ using System.Linq;
 
 namespace ExploreRussia.MVVM.Repositories
 {
+    /// <summary>
+    /// Класс репозитория таблицы логов
+    /// </summary>
     internal class LogRepository : RepositoryBase, ILogRepository
     {
         public void Add(LogModel log)

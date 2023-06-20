@@ -1,5 +1,8 @@
 ﻿namespace ExploreRussia.MVVM.Model
 {
+    /// <summary>
+    /// Класс модели пользователя
+    /// </summary>
     public class UserModel
     {
         public int Id { get; set; }

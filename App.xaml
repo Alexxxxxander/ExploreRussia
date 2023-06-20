@@ -23,10 +23,6 @@
             <DataTemplate DataType="{x:Type viewModel:TourViewModel}">
                 <view:TourView/>
             </DataTemplate>
-
-            <DataTemplate DataType="{x:Type viewModel:DiscoveryViewModel}">
-                <view:DiscoveryView/>
-            </DataTemplate>
             <DataTemplate DataType="{x:Type viewModel:HomeViewViewModel}">
                 <view:HomeView/>
             </DataTemplate>

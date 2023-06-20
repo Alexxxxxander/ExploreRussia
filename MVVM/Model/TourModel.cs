@@ -2,6 +2,9 @@
 
 namespace ExploreRussia.MVVM.Model
 {
+    /// <summary>
+    /// Класс модели туров
+    /// </summary>
     public class TourModel
     {
         public int Id { get; set; }

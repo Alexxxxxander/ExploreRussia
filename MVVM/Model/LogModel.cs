@@ -2,6 +2,9 @@
 
 namespace ExploreRussia.MVVM.Model
 {
+    /// <summary>
+    /// Класс модели логов
+    /// </summary>
     internal class LogModel
     {
         public int Id { get; set; }

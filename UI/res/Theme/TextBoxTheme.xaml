@@ -19,7 +19,6 @@
                             Width="200" Height="40">
                         <Grid>
                             <Rectangle StrokeThickness="1"/>
-
                             <TextBox Margin="1"
                                          Text="{Binding SearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                          BorderThickness="0"

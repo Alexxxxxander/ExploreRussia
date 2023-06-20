@@ -82,10 +82,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\View\DiscoveryView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MVVM\View\HomeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -103,10 +99,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UI\CustomControls\BindablePasswordBox.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UI\Pges\PageLogin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -160,7 +152,6 @@
     </Compile>
     <Compile Include="Core\ObservableObject.cs" />
     <Compile Include="Core\RelayCommand.cs" />
-    <Compile Include="MVVM\Converters\ComboBoxPopupWidthConverter.cs" />
     <Compile Include="MVVM\Model\ApplicationModel.cs" />
     <Compile Include="MVVM\Model\DifficultyModel.cs" />
     <Compile Include="MVVM\Model\IApplicationRepository.cs" />
@@ -181,18 +172,13 @@
     <Compile Include="MVVM\Repositories\RepositoryBase.cs" />
     <Compile Include="MVVM\Repositories\TourRepository.cs" />
     <Compile Include="MVVM\Repositories\UserRepository.cs" />
-    <Compile Include="MVVM\ViewModel\DiscoveryViewModel.cs" />
     <Compile Include="MVVM\ViewModel\HomeViewViewModel.cs" />
-    <Compile Include="Core\RelayCommandT.cs" />
     <Compile Include="MVVM\ViewModel\TourViewModel.cs" />
     <Compile Include="MVVM\ViewModel\LoginViewModel.cs" />
     <Compile Include="MVVM\ViewModel\MainViewModel.cs" />
     <Compile Include="MVVM\ViewModel\UserViewModel.cs" />
     <Compile Include="MVVM\View\AddEditWindow.xaml.cs">
       <DependentUpon>AddEditWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MVVM\View\DiscoveryView.xaml.cs">
-      <DependentUpon>DiscoveryView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\HomeView.xaml.cs">
       <DependentUpon>HomeView.xaml</DependentUpon>
@@ -208,9 +194,6 @@
     </Compile>
     <Compile Include="UI\CustomControls\BindablePasswordBox.xaml.cs">
       <DependentUpon>BindablePasswordBox.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Pges\PageLogin.xaml.cs">
-      <DependentUpon>PageLogin.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>

@@ -6,6 +6,9 @@ using System.Linq;
 
 namespace ExploreRussia.MVVM.Repositories
 {
+    /// <summary>
+    /// Класс репозитория таблицы сложностей
+    /// </summary>
     public class DifficultyRepository : RepositoryBase, IDifficultyRepository
     {
         public void Add(DifficultyModel difficultyModel)

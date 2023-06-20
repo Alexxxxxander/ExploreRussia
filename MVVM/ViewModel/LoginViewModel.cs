@@ -8,6 +8,9 @@ using System.Windows.Input;
 
 namespace ExploreRussia.MVVM.ViewModel
 {
+    /// <summary>
+    /// Класс описывающий логику окна входа
+    /// </summary>
     internal class LoginViewModel : ObservableObject
     {
         private string _username;
@@ -69,7 +72,11 @@ namespace ExploreRussia.MVVM.ViewModel
             LoginCommand = new RelayCommand(ExecuteLoginCommand, CanExecuteLogincommand);
         }
 
-
+        /// <summary>
+        /// Метод проверки условий выполнения команды
+        /// </summary>
+        /// <param name="arg"></param>
+        /// <returns></returns>
         private bool CanExecuteLogincommand(object arg)
         {
             bool validData;
@@ -80,6 +87,10 @@ namespace ExploreRussia.MVVM.ViewModel
             return validData;
         }
 
+        /// <summary>
+        /// Метод выполняющий действия команды
+        /// </summary>
+        /// <param name="obj"></param>
         private void ExecuteLoginCommand(object obj)
         {
             var isValidUser = userRepository.AuthenticateUser(new System.Net.NetworkCredential(Username, Password));

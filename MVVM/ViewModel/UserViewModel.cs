@@ -10,6 +10,9 @@ using System.Windows.Input;
 
 namespace ExploreRussia.MVVM.ViewModel
 {
+    /// <summary>
+    /// Класс, описывающий логику окна пользователя
+    /// </summary>
     internal class UserViewModel : ObservableObject
     {
         private IUserRepository userRepository;
@@ -58,6 +61,9 @@ namespace ExploreRussia.MVVM.ViewModel
             });
         }
 
+        /// <summary>
+        /// Метод, загружающий данные пользователя
+        /// </summary>
         private void LoadCurrentUserData()
         {
             var user = userRepository.GetByUsername(Thread.CurrentPrincipal.Identity.Name);

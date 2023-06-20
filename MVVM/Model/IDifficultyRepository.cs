@@ -2,6 +2,9 @@
 
 namespace ExploreRussia.MVVM.Model
 {
+    /// <summary>
+    /// Интерфейс репозитория таблицы сложностей
+    /// </summary>
     public interface IDifficultyRepository
     {
         void Add(DifficultyModel difficultyModel);

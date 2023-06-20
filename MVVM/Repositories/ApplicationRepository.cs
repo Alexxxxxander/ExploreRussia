@@ -7,6 +7,9 @@ using System.Linq;
 
 namespace ExploreRussia.MVVM.Repositories
 {
+    /// <summary>
+    /// Класс репозитория таблицы заявок
+    /// </summary>
     internal class ApplicationRepository : RepositoryBase, IApplicationRepository
     {
         public IEnumerable<ApplicationModel> GetAll()

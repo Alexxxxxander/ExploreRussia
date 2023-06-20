@@ -7,17 +7,18 @@ using System.Windows;
 
 namespace ExploreRussia.MVVM.ViewModel
 {
+    /// <summary>
+    /// Класс описывающий логику главного окна
+    /// </summary>
     class MainViewModel : ObservableObject
     {
         //команды перехода
         public RelayCommand TourViewCommand { get; set; }
-        public RelayCommand DiscoveryViewCommand { get; set; }
         public RelayCommand HomeViewCommand { get; set; }
         public RelayCommand UserViewCommand { get; set; }
 
         //ViewModels
         public TourViewModel TourVM { get; set; }
-        public DiscoveryViewModel DiscoveryVM { get; set; }
         public HomeViewViewModel HomeVM { get; set; }
         public UserViewModel UserVM { get; set; }
 
@@ -57,7 +58,6 @@ namespace ExploreRussia.MVVM.ViewModel
             LoadCurrentUserData();
 
             TourVM = new TourViewModel();
-            DiscoveryVM = new DiscoveryViewModel();
             HomeVM = new HomeViewViewModel();
             UserVM = new UserViewModel();
 
@@ -68,10 +68,6 @@ namespace ExploreRussia.MVVM.ViewModel
                 CurrentView = TourVM;
             });
 
-            DiscoveryViewCommand = new RelayCommand(o =>
-            {
-                CurrentView = DiscoveryVM;
-            });
             HomeViewCommand = new RelayCommand(o =>
             {
                 CurrentView = HomeVM;
@@ -83,7 +79,9 @@ namespace ExploreRussia.MVVM.ViewModel
             });
         }
 
-
+        /// <summary>
+        /// Загружает данные текущего пользователя
+        /// </summary>
         private void LoadCurrentUserData()
         {
             var user = userRepository.GetByUsername(Thread.CurrentPrincipal.Identity.Name);

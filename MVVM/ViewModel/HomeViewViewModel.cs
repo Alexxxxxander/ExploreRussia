@@ -70,7 +70,6 @@ namespace ExploreRussia.MVVM.ViewModel
 
             Labels = new[]
             {
-
                 DateTime.Now.Date.AddDays(-6).ToShortDateString().ToString(),
                 DateTime.Now.Date.AddDays(-5).ToShortDateString().ToString(),
                 DateTime.Now.Date.AddDays(-4).ToShortDateString().ToString(),
@@ -78,7 +77,6 @@ namespace ExploreRussia.MVVM.ViewModel
                 DateTime.Now.Date.AddDays(-2).ToShortDateString().ToString(),
                 DateTime.Now.Date.AddDays(-1).ToShortDateString().ToString(),
                 DateTime.Now.Date.ToShortDateString().ToString()
-
             };
             Formatter = value => value.ToString("N");
 

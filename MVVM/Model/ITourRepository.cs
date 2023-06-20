@@ -2,6 +2,9 @@
 
 namespace ExploreRussia.MVVM.Model
 {
+    /// <summary>
+    /// Интерфейс репозитория таблицы туров
+    /// </summary>
     internal interface ITourRepository
     {
         void Add(TourModel tourModel);

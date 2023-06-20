@@ -3,6 +3,9 @@ using System.Net;
 
 namespace ExploreRussia.MVVM.Model
 {
+    /// <summary>
+    /// Интерфейс репозитория таблицы пользователей
+    /// </summary>
     public interface IUserRepository
     {
         bool AuthenticateUser(NetworkCredential credential);

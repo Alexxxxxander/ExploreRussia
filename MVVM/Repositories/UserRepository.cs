@@ -7,6 +7,9 @@ using System.Net;
 
 namespace ExploreRussia.MVVM.Repositories
 {
+    /// <summary>
+    /// Класс репозитория таблицы пользователей
+    /// </summary>
     public class UserRepository : RepositoryBase, IUserRepository
     {
         public void Add(UserModel userModel)

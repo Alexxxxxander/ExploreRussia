@@ -7,6 +7,9 @@ using System.Windows;
 
 namespace ExploreRussia.MVVM.Repositories
 {
+    /// <summary>
+    /// Класс репозитория таблицы туров
+    /// </summary>
     internal class TourRepository : RepositoryBase, ITourRepository
     {
         public void Add(TourModel tourModel)

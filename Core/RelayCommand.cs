@@ -3,6 +3,9 @@ using System.Windows.Input;
 
 namespace ExploreRussia.Core
 {
+    /// <summary>
+    /// Базовый класс команды
+    /// </summary>
     internal class RelayCommand : ICommand
     {
         private Action<object> _execute;

@@ -13,7 +13,9 @@ using Microsoft.Office.Interop.Excel;
 
 namespace ExploreRussia.MVVM.ViewModel
 {
-
+    /// <summary>
+    /// Класс описывающий логику окна туров
+    /// </summary>
     internal class TourViewModel : ObservableObject
     {
         //поля
@@ -83,7 +85,9 @@ namespace ExploreRussia.MVVM.ViewModel
                 return _searchTextChangedCommand;
             }
         }
-
+        /// <summary>
+        /// Метод срабатыващий при изменение текста в текстовом поле
+        /// </summary>
         private void OnRequestSearchTextChanged()
         {
             TourRepository tours = new TourRepository();

@@ -71,11 +71,6 @@
                              FontSize="26"
                              IsChecked="True"
                              Command="{Binding TourViewCommand}"/>
-                <RadioButton Content="Заявки"
-                             Style="{StaticResource MenuButtonTheme}"
-                             Height="50" Foreground="Black"
-                             FontSize="26"
-                             Command="{Binding DiscoveryViewCommand}"/>
                 <RadioButton Content="Пользователь"
                              Style="{StaticResource MenuButtonTheme}"
                              Height="50" Foreground="Black"

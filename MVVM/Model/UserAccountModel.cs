@@ -1,5 +1,8 @@
 ﻿namespace ExploreRussia.MVVM.Model
 {
+    /// <summary>
+    /// Класс модели аккаунтов пользователя
+    /// </summary>
     internal class UserAccountModel
     {
         public string Username { get; set; }

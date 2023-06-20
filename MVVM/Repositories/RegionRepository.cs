@@ -6,6 +6,9 @@ using System.Linq;
 
 namespace ExploreRussia.MVVM.Repositories
 {
+    /// <summary>
+    /// Класс репозитория таблицы регионов
+    /// </summary>
     internal class RegionRepository : RepositoryBase, IRegionRepository
     {
         public void Add(RegionModel regionModel)

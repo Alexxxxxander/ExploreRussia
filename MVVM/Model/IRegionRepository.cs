@@ -2,6 +2,9 @@
 
 namespace ExploreRussia.MVVM.Model
 {
+    /// <summary>
+    /// Интейрфейс репозитория таблицы регионов
+    /// </summary>
     public interface IRegionRepository
     {
         void Add(RegionModel regionModel);

@@ -262,7 +262,6 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <conv:ComboBoxPopupWidthConverter x:Key="WidthConverter"/>
     <ControlTemplate x:Key="ComboBoxEditableTemplate" TargetType="{x:Type ComboBox}">
         <Grid x:Name="templateRoot" SnapsToDevicePixels="true">
             <Grid.ColumnDefinitions>

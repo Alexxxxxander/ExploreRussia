@@ -2,6 +2,9 @@
 
 namespace ExploreRussia.MVVM.Model
 {
+    /// <summary>
+    /// Модель заявки
+    /// </summary>
     internal class ApplicationModel
     {
         public int Id { get; set; }

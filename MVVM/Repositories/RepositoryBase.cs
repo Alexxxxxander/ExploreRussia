@@ -2,6 +2,9 @@
 
 namespace ExploreRussia.MVVM.Repositories
 {
+    /// <summary>
+    /// Базовый класс репозитория
+    /// </summary>
     public class RepositoryBase
     {
         private readonly string _connectionString;
